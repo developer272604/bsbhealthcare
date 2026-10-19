@@ -105,7 +105,23 @@ Real files in place: `logo.png`, `logo-square.png`, `founder-portrait.jpg`, favi
 * **About page:** a highlighted gold band right below the intro shows **50 years · 37 years at MMC · 21 directors**, and the “50 years” phrase is highlighted in the intro.
 * Click-to-call and WhatsApp on every screen: sticky header Call button, floating WhatsApp (tablet/desktop), sticky mobile bar **[Call] [WhatsApp] [Apply]**, per-context pre-filled messages, WhatsApp-only forms (Apply form has 4 fields), GA4 events `click_call`, `click_whatsapp`, `click_apply`.
 
-## 7. Deploy on Vercel
+## 7. Deploy
+
+### Cloudflare Pages (static export)
+
+In **Workers & Pages → your project → Settings → Build**:
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| **Build output directory** | **`out`** |
+| Root directory | *(leave empty)* |
+| Environment variable | `NEXT_PUBLIC_SITE_URL` = your final domain (with `https://`), optional `NEXT_PUBLIC_GA_ID`, optional `NODE_VERSION` = `22` |
+
+Cloudflare sets `CF_PAGES=1` during its build; `next.config.ts` detects it and switches to a fully static export into `out/` (images are served as-is, so keep each photo ≤ 200 KB; redirects and headers come from `public/_redirects` and `public/_headers`). Test locally with `STATIC_EXPORT=1 npm run build`.
+
+### Vercel (full Next.js features)
+
 
 1. Push to GitHub (done: `developer272604/bsbhealthcare`).
 2. Vercel → **Add New → Project → Import** the repository (Next.js is auto-detected).

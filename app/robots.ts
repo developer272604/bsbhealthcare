@@ -32,6 +32,8 @@ const AI_AND_SEARCH_BOTS = [
   "MistralAI-User",
 ];
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [

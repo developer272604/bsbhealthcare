@@ -1,0 +1,17 @@
+# Cloudflare Pages headers (ignored on Vercel, where next.config.ts handles them)
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# OG images are generated as extension-less files – tell browsers / social crawlers they are PNGs
+/og/*
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400

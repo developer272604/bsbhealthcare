@@ -6,6 +6,8 @@ import { absUrl } from "@/lib/utils";
 const BUILD_DATE = new Date();
 
 /** Every page in English and Tamil, each with hreflang alternates (en-IN, ta-IN, x-default) and its key image. */
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
   for (const path of Object.keys(seo)) {

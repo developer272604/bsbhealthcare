@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects (ignored on Vercel, where next.config.ts handles them)
+/portfolio     /about     301
+/ta/portfolio  /ta/about  301
