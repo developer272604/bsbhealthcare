@@ -1,0 +1,40 @@
+{
+  "name": "bsb-healthcare-chennai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BSB Health Care – Chennai: Health Skills Academy & Home Health Care",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "placeholders": "node scripts/generate-placeholders.mjs",
+    "confirm:list": "node scripts/list-confirm.mjs",
+    "check:seo": "tsx scripts/check-seo.ts",
+    "check:launch": "node scripts/list-confirm.mjs --fail"
+  },
+  "dependencies": {
+    "next": "^15.5.28",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "postcss": "^8.5.31",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "browserslist": [
+    "chrome >= 92",
+    "edge >= 92",
+    "firefox >= 92",
+    "safari >= 14",
+    "samsung >= 15",
+    "ios_saf >= 14"
+  ]
+}
