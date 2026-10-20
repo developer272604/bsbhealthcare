@@ -440,6 +440,8 @@ const img = (file: string, alt: string, w = 1200, h = 800, caption?: string): Im
 export const images = {
   logo: img("logo.png", "BSB Home Health Care logo – gold globe and the tagline The Complete Diabetic Care", 600, 214),
   logoSquare: img("logo-square.png", "BSB Home Health Care logo on navy background", 512, 512),
+  heroExecutive: img("hero-executive.webp", "M.R. Balachandran, founder of BSB Health Care, with arms folded", 820, 772),
+  heroEmblem: img("hero-emblem.webp", "50 years of experience gold emblem", 400, 323),
   founderPortrait: img("founder-portrait.jpg", "Portrait of M.R. Balachandran, founder of BSB Health Care, Chennai", 800, 1000),
   founderMicroscope: img("founder-microscope-lab.jpg", "M.R. Balachandran examining a slide under a microscope in the laboratory"),
   mmcWall: img("mmc-wall-of-directors.jpg", "Wall of directors at the Institute of Obstetrics & Gynaecology, Madras Medical College"),
@@ -585,10 +587,26 @@ export const skills: Skill[] = [
  * ------------------------------------------------------------------------- */
 export const hero = {
   ta: "",
+  eyebrow: "PRACTICAL SKILL",
+  /** H1 is rendered as: bold main part + lighter "tail" line (full text = h1) */
+  h1Main: "Point-of-Care Testing Practical Training & Home Health Care",
+  h1Tail: "in Chennai",
   h1: "Point-of-Care Testing Practical Training & Home Health Care in Chennai",
   sub: `Learn real healthcare skills in Tamil from M.R. Balachandran — ${site.experience} in medical laboratory service, Madras Medical College.`,
+  /** phrase inside `sub` that is shown as a highlighted pill */
+  highlight: site.experience,
   ctaApply: "Apply for Training",
   ctaHome: "Book Home Care",
+  features: [
+    { icon: "flask", text: "Hands-on Practical Training" },
+    { icon: "stethoscope", text: "Real-world Healthcare Skills" },
+    { icon: "home", text: "Home Health Care Support" },
+  ],
+  cards: [
+    { icon: "flask", text: "Medical Laboratory Expertise" },
+    { icon: "home", text: "Home Health Care Guidance" },
+    { icon: "users", text: "Practical Training Support" },
+  ],
 };
 
 /** Students trained – HIDDEN until the real number is confirmed. */

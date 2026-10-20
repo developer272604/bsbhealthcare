@@ -84,7 +84,7 @@ Edit **`lib/content.ts`** (English) and **`lib/content.ta.ts`** (Tamil). Keep bo
 **Yellow `[CONFIRM: …]` highlights** show on the page until fixed; they are stripped from JSON-LD, meta tags and llms.txt automatically.
 
 ### Images
-Real files in place: `logo.png`, `logo-square.png`, `founder-portrait.jpg`, favicon (`app/icon.png`, `apple-icon.png`, `favicon.ico`). Everything else is a placeholder – replace files in `public/images/` keeping the exact names, compress to ≤ 200 KB, and rewrite the alt text in `images` (both content files) to match each real photo. Photos with political or public figures are not included until the client confirms in writing.
+Real files in place: `logo.png`, `logo-square.png`, `founder-portrait.jpg`, the four home-hero artworks (`hero-executive/halo/lab/emblem.webp`, made by `scripts/process-hero-assets.mjs`; the "50 Years" emblem has the number baked in), favicon (`app/icon.png`, `apple-icon.png`, `favicon.ico`). Everything else is a placeholder – replace files in `public/images/` keeping the exact names, compress to ≤ 200 KB, and rewrite the alt text in `images` (both content files) to match each real photo. Photos with political or public figures are not included until the client confirms in writing.
 
 ---
 

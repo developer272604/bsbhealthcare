@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getContent, lp, type Lang } from "@/lib/i18n";
 import { site } from "@/lib/content";
@@ -14,46 +15,127 @@ import { Ta, Txt } from "./Txt";
 import { YouTubeEmbed } from "./YouTubeEmbed";
 
 /* 1. HERO ------------------------------------------------------------------ */
+const delay = (ms: number): React.CSSProperties => ({ ["--d" as string]: `${ms}ms` });
+const FEATURE_TONES = ["bg-sky-100 text-sky-700", "bg-emerald-100 text-emerald-700", "bg-red-100 text-brand-red"];
+
 export function HomeHero({ lang }: { lang: Lang }) {
   const c = getContent(lang);
-  const { hero, ui } = c;
+  const { hero, ui, images } = c;
   return (
-    <section className="bg-gradient-to-b from-mint to-white">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-10 sm:px-6 md:grid-cols-[1.25fr_1fr] md:py-16">
-        <div>
-          {hero.ta && (
-            <Ta as="p" className="text-2xl font-extrabold leading-snug text-brand-red md:text-4xl">
-              {hero.ta}
-            </Ta>
-          )}
-          <h1 className="mt-4 text-3xl font-extrabold leading-tight text-navy md:text-5xl">{hero.h1}</h1>
-          <p className="mt-4 max-w-xl text-base text-muted md:text-lg">{hero.sub}</p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+    <section className="relative overflow-hidden bg-white">
+      <div className="mx-auto max-w-[1560px] px-4 pt-8 sm:px-6 lg:min-h-[640px] lg:px-10 lg:pt-8">
+        {/* ---------------- LEFT: text (fades in on every page load) ---------------- */}
+        <div className="relative z-10 pb-2 lg:w-[52%] lg:pb-14">
+          <p className="hero-in flex items-center gap-4 text-xs font-semibold tracking-[0.32em] text-sky-700 sm:text-sm" style={delay(0)}>
+            <span aria-hidden="true" className="h-px w-12 bg-sky-500 sm:w-16" />
+            {hero.eyebrow}
+          </p>
+
+          <h1 className="hero-in-soft mt-4 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-navy sm:text-5xl lg:text-[3.3rem]" style={delay(80)}>
+            {hero.h1Main}
+            {hero.h1Tail && (
+              <>
+                {" "}
+                <span className="block font-light">{hero.h1Tail}</span>
+              </>
+            )}
+          </h1>
+
+          <p className="hero-in hero-sub mt-5 max-w-xl text-base leading-relaxed text-ink/85 md:text-lg" style={delay(220)}>
+            <Txt highlight={hero.highlight}>{hero.sub}</Txt>
+          </p>
+
+          <ul className="hero-in mt-7 flex flex-wrap items-center gap-y-4" style={delay(340)}>
+            {hero.features.map((f, i) => (
+              <li key={f.text} className="mr-4 flex items-center gap-2.5 border-navy/15 pr-4 last:mr-0 last:border-0 last:pr-0 sm:border-r xl:mr-5 xl:gap-3 xl:pr-5">
+                <span className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${FEATURE_TONES[i % 3]}`}>
+                  <Icon name={f.icon} className="h-6 w-6" />
+                </span>
+                <span className="max-w-[7.5rem] text-[13px] leading-snug text-navy/85 xl:text-sm">{f.text}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="hero-in mt-8 flex flex-col gap-3 sm:flex-row" style={delay(460)}>
             <ApplyButton lang={lang} size="lg" label={hero.ctaApply} where="hero" />
             <Link href={lp(lang, "/home-care")} className={btnClass("outline", "lg")}>
               {hero.ctaHome}
+              <Icon name="arrow" className="h-4 w-4" />
             </Link>
           </div>
-          <p className="mt-4 text-sm text-muted">
-            {ui.preferTalk}{" "}
-            <a className="font-semibold text-navy underline" href={telHref} data-track="click_call" data-track-location="hero">
-              {ui.call} {site.phoneDisplay}
-            </a>
+
+          <p className="hero-in mt-5 flex items-center gap-3 text-sm text-ink/80 md:text-base" style={delay(580)}>
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-navy text-white">
+              <Icon name="phone" className="h-4 w-4" />
+            </span>
+            <span>
+              {ui.preferTalk}{" "}
+              <a className="font-bold text-navy hover:underline" href={telHref} data-track="click_call" data-track-location="hero">
+                {ui.call} {site.phoneDisplay}
+              </a>
+            </span>
           </p>
         </div>
-        <figure className="relative mx-auto w-full max-w-sm">
-          <div aria-hidden="true" className="absolute -bottom-3 -right-3 left-3 top-3 rounded-2xl bg-gold/40" />
-          <Photo
-            img={c.images.founderPortrait}
-            priority
-            sizes="(max-width: 768px) 80vw, 400px"
-            className="relative aspect-[4/5] shadow-card"
+
+      </div>
+
+      {/* ---------------- RIGHT: halo + lab backdrop + portrait + emblem + floating cards (bleeds to the screen edge on desktop) ---------------- */}
+      <div className="relative mx-auto aspect-[1/1] w-full max-w-[560px] lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:aspect-auto lg:h-full lg:w-[50%] lg:max-w-none">
+          <Image
+            src="/images/hero-halo.webp"
+            alt=""
+            aria-hidden="true"
+            width={640}
+            height={531}
+            sizes="(max-width: 1024px) 90vw, 640px"
+            className="hero-fade absolute -right-[6%] top-[2%] w-[104%] max-w-none lg:w-[98%]"
+            style={delay(100)}
           />
-          <figcaption className="relative z-10 -mt-6 mx-auto w-[85%] rounded-xl bg-navy px-4 py-2.5 text-center text-white shadow-card">
-            <span className="block font-bold">{ui.founderName}</span>
-            <span className="block text-xs text-white/85">{ui.founderCaption}</span>
-          </figcaption>
-        </figure>
+          <Image
+            src="/images/hero-lab.webp"
+            alt=""
+            aria-hidden="true"
+            width={640}
+            height={427}
+            sizes="(max-width: 1024px) 60vw, 400px"
+            className="hero-fade absolute -right-[6%] bottom-0 w-[66%] max-w-none opacity-90"
+            style={delay(250)}
+          />
+          <Image
+            src={images.heroExecutive.src}
+            alt={images.heroExecutive.alt}
+            width={images.heroExecutive.w}
+            height={images.heroExecutive.h}
+            priority
+            sizes="(max-width: 1024px) 85vw, 520px"
+            className="hero-in-right absolute bottom-0 left-[10%] z-10 h-auto w-[82%] max-w-none lg:left-[17%] lg:h-[92%] lg:w-auto"
+            style={delay(120)}
+          />
+          <div className="hero-pop absolute left-[1%] top-[24%] z-20 w-[40%] max-w-[270px] lg:left-[3%] lg:top-[22%] lg:w-[38%]" style={delay(650)}>
+            <Image
+              src={images.heroEmblem.src}
+              alt={images.heroEmblem.alt}
+              width={images.heroEmblem.w}
+              height={images.heroEmblem.h}
+              sizes="(max-width: 1024px) 40vw, 260px"
+              className="hero-float h-auto w-full drop-shadow-xl"
+            />
+          </div>
+
+          <ul className="absolute right-[3%] top-[11%] z-20 hidden w-[245px] flex-col gap-3 2xl:flex">
+            {hero.cards.map((card, i) => (
+              <li
+                key={card.text}
+                className="hero-in-right flex items-center gap-3 rounded-2xl bg-white p-3 pr-4 shadow-card ring-1 ring-navy/5"
+                style={delay(750 + i * 130)}
+              >
+                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sky-50 text-navy">
+                  <Icon name={card.icon} className="h-7 w-7" />
+                </span>
+                <span className="text-sm font-medium leading-snug text-navy/85">{card.text}</span>
+              </li>
+            ))}
+          </ul>
       </div>
     </section>
   );
