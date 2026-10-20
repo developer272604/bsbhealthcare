@@ -213,3 +213,20 @@ html[lang="ta-IN"] h2 {
   color: #0b2a6f;
   white-space: nowrap;
 }
+
+/* Dotted decoration + wave artwork for the courses / why-training sections */
+.dots {
+  background-image: radial-gradient(circle, #6fa8e8 2px, transparent 2.5px);
+  background-size: 18px 18px;
+  opacity: 0.55;
+}
+.dots-light {
+  background-image: radial-gradient(circle, rgb(255 255 255 / 0.55) 2px, transparent 2.5px);
+  opacity: 0.45;
+}
+.bg-wave {
+  background-color: #0b2a6f;
+  background-image: url("/images/section-wave.webp");
+  background-size: cover;
+  background-position: center bottom;
+}

@@ -642,10 +642,10 @@ export const whyTraining = {
   titleTa: "",
   title: "Why this training?",
   points: [
-    { icon: "hands", en: "Learn basic health tests fully hands-on", ta: "" },
-    { icon: "briefcase", en: "Improve job opportunities in the medical field", ta: "" },
-    { icon: "rocket", en: "Gain skills for self-employment", ta: "" },
-    { icon: "certificate", en: "Get recognised with a certificate", ta: "" },
+    { icon: "book", en: "Learn basic health tests fully hands-on", text: "Get practical experience with essential health tests.", ta: "" },
+    { icon: "briefcase", en: "Improve job opportunities in the medical field", text: "Build skills that open up new career opportunities.", ta: "" },
+    { icon: "chart", en: "Gain skills for self-employment", text: "Start your own services and become independent.", ta: "" },
+    { icon: "certificate", en: "Get recognised with a certificate", text: "Receive a certificate of completion when you finish the course.", ta: "" },
   ],
 };
 
@@ -1773,6 +1773,7 @@ export const ui = {
   whatsapp: "WhatsApp",
   whatsappUs: "WhatsApp us",
   apply: "Apply",
+  applyNow: "Apply Now",
   applyAria: "Apply for training on WhatsApp",
   applyTraining: "Apply for Training",
   chatWhatsApp: "Chat with us on WhatsApp",

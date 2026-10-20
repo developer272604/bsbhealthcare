@@ -98,7 +98,7 @@ export function HomeHero({ lang }: { lang: Lang }) {
             width={640}
             height={427}
             sizes="(max-width: 1024px) 60vw, 400px"
-            className="hero-fade absolute -right-[6%] bottom-0 w-[66%] max-w-none opacity-90"
+            className="hero-fade absolute -right-[3%] bottom-0 w-[74%] max-w-none"
             style={delay(250)}
           />
           <Image
@@ -108,10 +108,10 @@ export function HomeHero({ lang }: { lang: Lang }) {
             height={images.heroExecutive.h}
             priority
             sizes="(max-width: 1024px) 85vw, 520px"
-            className="hero-in-right absolute bottom-0 left-[10%] z-10 h-auto w-[82%] max-w-none lg:left-[17%] lg:h-[92%] lg:w-auto"
+            className="hero-in-right absolute bottom-0 left-[10%] z-10 h-auto w-[82%] max-w-none lg:left-[12%] lg:h-[82%] lg:w-auto"
             style={delay(120)}
           />
-          <div className="hero-pop absolute left-[1%] top-[24%] z-20 w-[40%] max-w-[270px] lg:left-[3%] lg:top-[22%] lg:w-[38%]" style={delay(650)}>
+          <div className="hero-pop absolute left-[1%] top-[24%] z-20 w-[40%] max-w-[270px] lg:left-[-1%] lg:top-[26%] lg:w-[34%]" style={delay(650)}>
             <Image
               src={images.heroEmblem.src}
               alt={images.heroEmblem.alt}
@@ -191,76 +191,130 @@ export function SkillsGrid({ lang, link = true }: { lang: Lang; link?: boolean }
   );
 }
 
-/* 4. COURSES --------------------------------------------------------------- */
-export function CourseCards({ lang, heading = true }: { lang: Lang; heading?: boolean }) {
-  const { courses, homeSections, ui } = getContent(lang);
+/* helper: colours the last word of a heading */
+function TitleAccent({ title, accent }: { title: string; accent: string }) {
+  const i = title.lastIndexOf(" ");
+  if (i < 0) return <span className={accent}>{title}</span>;
   return (
-    <Section id="courses">
-      {heading && <SectionHeading title={homeSections.coursesTitle} ta={homeSections.coursesTa} />}
-      <div className="grid gap-6 md:grid-cols-2">
-        {Object.values(courses).map((c) => (
-          <Card key={c.slug} className="flex flex-col">
-            {c.ta && (
-              <Ta as="p" className="text-sm font-bold text-brand-red">
-                {c.ta}
-              </Ta>
-            )}
-            <h3 className="mt-1 text-xl font-extrabold text-navy md:text-2xl">{c.title}</h3>
-            <p className="mt-2 text-muted">{c.summary}</p>
-            <dl className="mt-4 grid grid-cols-3 gap-3 rounded-xl bg-mint p-4 text-sm">
-              <div>
-                <dt className="text-xs font-semibold uppercase text-muted">{ui.duration}</dt>
-                <dd className="font-bold text-navy">
-                  <Txt>{c.duration}</Txt>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold uppercase text-muted">{ui.mode}</dt>
-                <dd className="font-bold text-navy">{c.mode}</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold uppercase text-muted">{ui.fee}</dt>
-                <dd className="text-lg font-extrabold text-brand-red">{c.fee}</dd>
-              </div>
-            </dl>
-            <p className="mt-2 text-xs">
-              <Txt>{c.feeNote}</Txt>
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <ApplyButton lang={lang} label={ui.apply} message={c.apply} where={`course-${c.slug}`} />
-              <Link href={lp(lang, c.href)} className={btnClass("outline")}>
-                {ui.courseDetails}
-              </Link>
-            </div>
-          </Card>
-        ))}
-      </div>
-    </Section>
+    <>
+      {title.slice(0, i + 1)}
+      <span className={accent}>{title.slice(i + 1)}</span>
+    </>
   );
 }
 
-/* 5. WHY THIS TRAINING ----------------------------------------------------- */
+/* 4. COURSES – light section with 3D artwork, stat strip inside each card ------------------- */
+const COURSE_ICON: Record<string, string> = { "point-of-care-testing": "flask", "health-assistant-for-diabetics": "drop" };
+const COURSE_TONE = ["bg-sky-100 text-sky-700", "bg-emerald-100 text-emerald-700"];
+
+export function CourseCards({ lang, heading = true }: { lang: Lang; heading?: boolean }) {
+  const { courses, homeSections, ui } = getContent(lang);
+  return (
+    <section id="courses" className="relative overflow-hidden bg-gradient-to-b from-white to-sky-50 py-12 md:py-16 xl:pb-44 2xl:pb-16">
+      {/* decoration */}
+      <Image src="/images/hero-halo.webp" alt="" aria-hidden="true" width={640} height={531} className="pointer-events-none absolute -left-24 top-10 hidden w-[420px] max-w-none opacity-50 lg:block" />
+      <Image src="/images/hero-halo.webp" alt="" aria-hidden="true" width={640} height={531} className="pointer-events-none absolute -right-28 -top-10 hidden w-[460px] max-w-none opacity-60 lg:block" />
+      <div aria-hidden="true" className="dots pointer-events-none absolute left-[6%] top-12 hidden h-24 w-32 lg:block" />
+      <div aria-hidden="true" className="dots pointer-events-none absolute right-[5%] top-24 hidden h-28 w-36 lg:block" />
+      <Image src="/images/section-books.webp" alt="" aria-hidden="true" width={520} height={347} className="pointer-events-none absolute bottom-0 left-0 hidden w-[clamp(150px,15vw,300px)] max-w-none xl:block" />
+      <Image src="/images/section-clipboard.webp" alt="" aria-hidden="true" width={560} height={373} className="pointer-events-none absolute bottom-0 right-0 hidden w-[clamp(160px,16vw,320px)] max-w-none xl:block" />
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        {heading && (
+          <div data-reveal className="mb-8">
+            {homeSections.coursesTa && <Ta as="p" className="mb-1 text-lg font-bold text-brand-red">{homeSections.coursesTa}</Ta>}
+            <h2 className="text-3xl font-extrabold text-navy md:text-4xl">
+              <TitleAccent title={homeSections.coursesTitle} accent="text-sky-600" />
+            </h2>
+            <span aria-hidden="true" className="mt-3 block h-1 w-14 rounded-full bg-gold" />
+          </div>
+        )}
+        <div className="grid gap-6 lg:grid-cols-2">
+          {Object.values(courses).map((c, idx) => (
+            <Card key={c.slug} className="flex flex-col !p-6 md:!p-7">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  {c.ta && <Ta as="p" className="text-sm font-bold text-brand-red">{c.ta}</Ta>}
+                  <h3 className="text-xl font-extrabold text-navy md:text-2xl">{c.title}</h3>
+                  <p className="mt-2 text-sm text-muted md:text-base">{c.summary}</p>
+                </div>
+                <span className={`hidden h-16 w-16 shrink-0 items-center justify-center rounded-full sm:inline-flex ${COURSE_TONE[idx % 2]}`}>
+                  <Icon name={COURSE_ICON[c.slug] ?? "flask"} className="h-8 w-8" />
+                </span>
+              </div>
+
+              <dl className="mt-5 grid grid-cols-1 divide-y divide-navy/10 rounded-xl bg-mint/80 text-sm sm:grid-cols-[1fr_1.5fr_1fr] sm:divide-x sm:divide-y-0">
+                <div className="flex items-center gap-3 px-4 py-3">
+                  <Icon name="calendar" className="h-6 w-6 shrink-0 text-navy" />
+                  <div>
+                    <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">{ui.duration}</dt>
+                    <dd className="font-bold text-navy"><Txt>{c.duration}</Txt></dd>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 px-4 py-3">
+                  <Icon name="users" className="h-6 w-6 shrink-0 text-navy" />
+                  <div>
+                    <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">{ui.mode}</dt>
+                    <dd className="font-bold leading-snug text-navy">{c.mode}</dd>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 px-4 py-3">
+                  <Icon name="coins" className="h-6 w-6 shrink-0 text-navy" />
+                  <div>
+                    <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted">{ui.fee}</dt>
+                    <dd className="text-xl font-extrabold text-brand-red">{c.fee}</dd>
+                  </div>
+                </div>
+              </dl>
+              <p className="mt-2 text-xs"><Txt>{c.feeNote}</Txt></p>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                <ApplyButton lang={lang} label={ui.applyNow} message={c.apply} where={`course-${c.slug}`} />
+                <Link href={lp(lang, c.href)} className={btnClass("outline")}>
+                  {ui.courseDetails}
+                </Link>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* 5. WHY THIS TRAINING – navy wave artwork, coloured icon cards ------------------------------ */
+const WHY_TONE = ["bg-gold text-navy", "bg-blue-500 text-white", "bg-emerald-500 text-white", "bg-violet-500 text-white"];
+
 export function WhyTraining({ lang }: { lang: Lang }) {
   const { whyTraining } = getContent(lang);
   return (
-    <Section bg="navy" id="why">
-      <SectionHeading title={whyTraining.title} ta={whyTraining.titleTa} light />
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {whyTraining.points.map((p) => (
-          <li key={p.en} className="rounded-2xl bg-white/10 p-5 transition duration-300 hover:-translate-y-1 hover:bg-white/15">
-            <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gold text-navy">
-              <Icon name={p.icon} className="h-7 w-7" />
-            </span>
-            {p.ta && (
-              <Ta as="p" className="text-sm font-bold text-gold">
-                {p.ta}
-              </Ta>
-            )}
-            <p className="mt-1 text-lg font-bold">{p.en}</p>
-          </li>
-        ))}
-      </ul>
-    </Section>
+    <section id="why" className="bg-wave relative overflow-hidden py-12 text-white md:py-16">
+      <div aria-hidden="true" className="dots dots-light pointer-events-none absolute bottom-10 left-[3%] hidden h-24 w-28 md:block" />
+      <div aria-hidden="true" className="dots dots-light pointer-events-none absolute bottom-16 right-[3%] hidden h-24 w-28 md:block" />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div data-reveal className="mb-8">
+          {whyTraining.titleTa && <Ta as="p" className="mb-1 text-lg font-bold text-gold">{whyTraining.titleTa}</Ta>}
+          <h2 className="text-3xl font-extrabold md:text-4xl">
+            <TitleAccent title={whyTraining.title} accent="text-gold" />
+          </h2>
+          <span aria-hidden="true" className="mt-3 block h-1 w-14 rounded-full bg-gold" />
+        </div>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {whyTraining.points.map((p, i) => (
+            <li key={p.en} className="flex items-start gap-4 rounded-2xl border border-white/15 bg-navy-800/60 p-5 transition duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-navy-800/80">
+              <span className={`inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full shadow-lg ${WHY_TONE[i % 4]}`}>
+                <Icon name={p.icon} className="h-6 w-6" />
+              </span>
+              <div>
+                {p.ta && <Ta as="p" className="text-sm font-bold text-gold">{p.ta}</Ta>}
+                <p className="font-bold leading-snug">{p.en}</p>
+                <p className="mt-2 text-sm leading-snug text-white/75">{p.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 
