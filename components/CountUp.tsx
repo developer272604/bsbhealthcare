@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /** Number that counts up when scrolled into view. Server-renders the final value (works without JS). */
-export function CountUp({ to, duration = 1600 }: { to: number; duration?: number }) {
+export function CountUp({ to, suffix = "", duration = 1600 }: { to: number; suffix?: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(to);
 
@@ -35,9 +35,15 @@ export function CountUp({ to, duration = 1600 }: { to: number; duration?: number
   }, [to, duration]);
 
   return (
-    <span ref={ref} className="inline-block tabular-nums" style={{ minWidth: `${String(to).length}ch` }}>
-      <span className="sr-only">{to}</span>
-      <span aria-hidden="true">{value}</span>
+    <span ref={ref} className="inline-block tabular-nums" style={{ minWidth: `${String(to).length + suffix.length}ch` }}>
+      <span className="sr-only">
+        {to}
+        {suffix}
+      </span>
+      <span aria-hidden="true">
+        {value}
+        {suffix}
+      </span>
     </span>
   );
 }

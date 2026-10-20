@@ -47,7 +47,7 @@ const common = {
     closes: site.hours.schema.closes,
   },
   areaServed,
-  sameAs: [site.facebook, site.mapsUrl],
+  sameAs: [site.facebook, site.mapsUrl, ...(site.instagram ? [site.instagram] : [])],
   founder: { "@id": founderId },
   knowsLanguage: ["ta", "en"],
 };

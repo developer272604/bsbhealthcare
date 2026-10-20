@@ -100,10 +100,6 @@ export function DiabetesView({ lang }: { lang: Lang }) {
             </Card>
           ))}
         </div>
-        <p className="mt-6 flex gap-2 rounded-xl bg-brand-red/10 p-4 font-semibold text-brand-red-dark">
-          <Icon name="warning" className="h-6 w-6 shrink-0" />
-          {disclaimers.emergency}
-        </p>
       </Section>
 
       <Section bg="mint">

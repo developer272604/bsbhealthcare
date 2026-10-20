@@ -14,7 +14,7 @@ import { howToSchema, pageSchema, serviceSchema } from "@/lib/schema";
 
 export function ServiceView({ lang, slug }: { lang: Lang; slug: string }) {
   const c = getContent(lang);
-  const { homeCare, areasServed, areasConfirm, disclaimers, ui } = c;
+  const { homeCare, areasServed, areasConfirm, ui } = c;
   const s = homeCare.services.find((x) => x.slug === slug);
   if (!s) return null;
   const entry = c.seo[s.href];
@@ -37,25 +37,11 @@ export function ServiceView({ lang, slug }: { lang: Lang; slug: string }) {
       <QuickAnswer label={ui.inShort} text={entry.answer ?? entry.description} />
 
       <Section>
-        <div className="grid gap-8 md:grid-cols-[1.4fr_1fr]">
-          <div>
-            <p className="text-lg text-muted md:text-xl">{s.intro}</p>
-            <p className="mt-3 text-sm">
-              <Txt>{s.confirm}</Txt>
-            </p>
-          </div>
-          <Card className="self-start bg-mint">
-            <h2 className="flex items-center gap-2 font-bold text-navy">
-              <Icon name="warning" className="h-5 w-5 text-brand-red" />
-              {ui.notEmergency}
-            </h2>
-            <p className="mt-1 text-sm text-muted">{disclaimers.emergency}</p>
-            {lang === "en" && disclaimers.emergencyTa && (
-              <Ta as="p" className="mt-1 text-sm text-muted">
-                {disclaimers.emergencyTa}
-              </Ta>
-            )}
-          </Card>
+        <div className="max-w-4xl">
+          <p className="text-lg text-muted md:text-xl">{s.intro}</p>
+          <p className="mt-3 text-sm">
+            <Txt>{s.confirm}</Txt>
+          </p>
         </div>
       </Section>
 

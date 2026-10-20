@@ -79,6 +79,8 @@ Edit **`lib/content.ts`** (English) and **`lib/content.ta.ts`** (Tamil). Keep bo
 | Buttons, labels, form text, breadcrumbs, footer headings | `ui` |
 | Pre-filled WhatsApp messages | `waMessages` |
 
+**Social links:** `site.facebook` and `site.instagram` in `lib/content.ts` (the footer shows the Instagram icon only once `instagram` is filled in).
+
 **Switches (hidden until confirmed):** `bankLoan.enabled` (loan block, trust item, FAQ, Admissions title), `studentsTrained.enabled`, and `testimonials` / `testimonialVideoId` (section hidden while empty).
 
 **Yellow `[CONFIRM: …]` highlights** show on the page until fixed; they are stripped from JSON-LD, meta tags and llms.txt automatically.

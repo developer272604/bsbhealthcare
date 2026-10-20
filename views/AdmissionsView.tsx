@@ -136,11 +136,12 @@ export function AdmissionsView({ lang }: { lang: Lang }) {
               where="admissions-form"
               whatsappNumber={site.whatsappNumber}
               labels={ui.formLabels}
+              showIcon={false}
               fields={[
-                { name: "name", label: ui.fullName, required: true },
-                { name: "phone", label: ui.mobileNumber, type: "tel", required: true, placeholder: ui.tenDigit },
-                { name: "course", label: ui.course, type: "select", required: true, options: [courses.poct.title, courses.diabetic.title] },
-                { name: "qualification", label: ui.qualification, placeholder: ui.qualificationHint, required: true },
+                { name: "name", label: ui.fullName, kind: "name", required: true },
+                { name: "phone", label: ui.mobileNumber, kind: "phone", required: true, placeholder: ui.tenDigit },
+                { name: "course", label: ui.course, kind: "select", required: true, options: [courses.poct.title, courses.diabetic.title] },
+                { name: "qualification", label: ui.qualification, kind: "text", placeholder: ui.qualificationHint, required: true },
               ]}
             />
           </Card>

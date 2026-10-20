@@ -29,7 +29,7 @@ function Row({ icon, label, children }: { icon: string; label: string; children:
 
 export function ContactView({ lang }: { lang: Lang }) {
   const c = getContent(lang);
-  const { contact, areasServed, areasConfirm, disclaimers, ui, waMessages } = c;
+  const { contact, areasServed, areasConfirm, ui, waMessages } = c;
   const entry = c.seo["/contact"];
   return (
     <>
@@ -66,7 +66,6 @@ export function ContactView({ lang }: { lang: Lang }) {
                 {areasServed.join(", ")} <Txt>{areasConfirm}</Txt>
               </Row>
             </ul>
-            <div className="mt-6 rounded-xl bg-brand-red/10 p-4 text-sm font-semibold text-brand-red-dark">{disclaimers.emergency}</div>
           </div>
 
           <Card>
@@ -80,11 +79,11 @@ export function ContactView({ lang }: { lang: Lang }) {
               whatsappNumber={site.whatsappNumber}
               labels={ui.formLabels}
               fields={[
-                { name: "name", label: ui.name, required: true },
-                { name: "phone", label: ui.mobileNumber, type: "tel", required: true, placeholder: ui.tenDigit },
-                { name: "need", label: ui.iNeed, type: "select", required: true, options: contact.needs },
-                { name: "area", label: ui.areaInChennai, placeholder: ui.areaHint },
-                { name: "message", label: ui.message, type: "textarea" },
+                { name: "name", label: ui.name, kind: "name", required: true },
+                { name: "phone", label: ui.mobileNumber, kind: "phone", required: true, placeholder: ui.tenDigit },
+                { name: "need", label: ui.iNeed, kind: "select", required: true, options: contact.needs },
+                { name: "area", label: ui.areaInChennai, kind: "area", placeholder: ui.areaHint },
+                { name: "message", label: ui.message, kind: "message" },
               ]}
             />
           </Card>

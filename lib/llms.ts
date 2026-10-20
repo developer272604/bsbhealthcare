@@ -14,7 +14,7 @@ export function buildLlmsTxt(): string {
 
 > ${clean(s["/"].answer ?? s["/"].description)}
 
-Facts: ${site.academyName} (training) and ${site.homeCareName} (home health care) in Chennai, Tamil Nadu, India. Founder: ${founderInfo.name}. Phone / WhatsApp: ${site.phoneDisplay}. Address: ${fullAddress()}. Hours: ${en.site.hours.display}. Languages: Tamil and English (every page exists in both). Not an emergency service — in an emergency call 108.
+Facts: ${site.academyName} (training) and ${site.homeCareName} (home health care) in Chennai, Tamil Nadu, India. Founder: ${founderInfo.name}. Phone / WhatsApp: ${site.phoneDisplay}. Address: ${fullAddress()}. Hours: ${en.site.hours.display}. Languages: Tamil and English (every page exists in both).
 
 ## Training (BSB Health Skills Academy)
 ${link("Academy overview", "/academy", s["/academy"].answer ?? "")}
@@ -50,7 +50,7 @@ export function buildLlmsFull(): string {
     const L: string[] = [];
     L.push(`\n=====  ${lang === "en" ? "ENGLISH" : "TAMIL / தமிழ்"}  =====\n`);
     L.push(`## ${c.hero.h1}\n${clean(c.hero.sub)}\n${u("/")}\n`);
-    L.push(`### ${lang === "en" ? "Business details" : "வணிக விவரங்கள்"}\n- ${site.name}\n- ${fullAddress()}\n- ${site.phoneDisplay} (${lang === "en" ? "phone & WhatsApp" : "தொலைபேசி & WhatsApp"})\n- ${site.email}\n- ${c.site.hours.display}\n- ${c.site.mission}\n- ${c.disclaimers.emergency}\n`);
+    L.push(`### ${lang === "en" ? "Business details" : "வணிக விவரங்கள்"}\n- ${site.name}\n- ${fullAddress()}\n- ${site.phoneDisplay} (${lang === "en" ? "phone & WhatsApp" : "தொலைபேசி & WhatsApp"})\n- ${site.email}\n- ${c.site.hours.display}\n- ${c.site.mission}\n`);
 
     L.push(`### ${c.ui.navAcademy}\n${clean(c.academy.h1)}\n${c.academy.intro.map(clean).join("\n")}\n`);
     for (const k of Object.values(c.courses)) {
@@ -73,7 +73,7 @@ export function buildLlmsFull(): string {
     L.push(`### ${c.about.h1}\n${clean(c.about.intro)}\n${clean(c.about.experience.title)}: ${c.about.experience.items.map((i) => `${i.value} – ${i.label}`).join("; ")}\n${c.about.philosophy.points.map((p) => `- ${p.title}: ${clean(p.text)}`).join("\n")}\n${u("/about")}\n`);
 
     L.push(`### ${c.homeSections.faqTitle}\n${c.homeFaqs.map((f) => `Q: ${clean(f.q)}\nA: ${clean(f.a)}`).join("\n")}\n`);
-    L.push(`### ${c.disclaimers.emergency}\n${clean(c.disclaimers.medical)} ${clean(c.disclaimers.supplements)}\n`);
+    L.push(`### ${lang === "en" ? "Medical disclaimer" : "மருத்துவ மறுப்பு அறிவிப்பு"}\n${clean(c.disclaimers.medical)} ${clean(c.disclaimers.supplements)}\n`);
     parts.push(L.join("\n"));
   }
   return parts.join("\n");

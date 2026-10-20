@@ -47,7 +47,7 @@ export function AboutView({ lang }: { lang: Lang }) {
                   <Icon name={it.icon} className="h-6 w-6" />
                 </span>
                 <p className="mt-3 text-5xl font-black leading-none text-gold md:text-6xl">
-                  <CountUp to={it.value} />
+                  <CountUp to={it.value} suffix={it.suffix} />
                 </p>
                 <p className="mt-2 text-sm font-semibold text-white/90 md:text-base">{it.label}</p>
               </li>
@@ -63,7 +63,7 @@ export function AboutView({ lang }: { lang: Lang }) {
 
       <Section>
         <div className="grid items-start gap-8 md:grid-cols-[1fr_1.5fr]">
-          <figure>
+          <figure className="md:sticky md:top-24 md:self-start">
             <div className="relative">
               <div aria-hidden="true" className="absolute -bottom-3 -right-3 left-3 top-3 rounded-2xl bg-gold/40" />
               <Photo img={images.founderPortrait} sizes="(max-width: 768px) 90vw, 400px" className="relative aspect-[4/5] shadow-card" />
@@ -88,21 +88,22 @@ export function AboutView({ lang }: { lang: Lang }) {
                 </li>
               ))}
             </ol>
+
+            <div className="mt-14">
+              <SectionHeading title={about.philosophy.title} />
+              <div className="grid gap-4">
+                {about.philosophy.points.map((p) => (
+                  <Card key={p.title}>
+                    <h3 className="text-lg font-bold text-navy">{p.title}</h3>
+                    <p className="mt-2 text-muted">{p.text}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Section>
 
-      <Section bg="mint">
-        <SectionHeading title={about.philosophy.title} />
-        <div className="grid gap-4 md:grid-cols-3">
-          {about.philosophy.points.map((p) => (
-            <Card key={p.title}>
-              <h3 className="text-lg font-bold text-navy">{p.title}</h3>
-              <p className="mt-2 text-muted">{p.text}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
 
       <Section>
         <div className="grid items-center gap-8 md:grid-cols-2">

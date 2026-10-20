@@ -26,10 +26,10 @@ export function HomeHero({ lang }: { lang: Lang }) {
       <div className="mx-auto max-w-[1560px] px-4 pt-8 sm:px-6 lg:min-h-[640px] lg:px-10 lg:pt-8">
         {/* ---------------- LEFT: text (fades in on every page load) ---------------- */}
         <div className="relative z-10 pb-2 lg:w-[52%] lg:pb-14">
-          <p className="hero-in flex items-center gap-4 text-xs font-semibold tracking-[0.32em] text-sky-700 sm:text-sm" style={delay(0)}>
+          {/* <p className="hero-in flex items-center gap-4 text-xs font-semibold tracking-[0.32em] text-sky-700 sm:text-sm" style={delay(0)}>
             <span aria-hidden="true" className="h-px w-12 bg-sky-500 sm:w-16" />
             {hero.eyebrow}
-          </p>
+          </p> */}
 
           <h1 className="hero-in-soft mt-4 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-navy sm:text-5xl lg:text-[3.3rem]" style={delay(80)}>
             {hero.h1Main}
@@ -141,20 +141,20 @@ export function HomeHero({ lang }: { lang: Lang }) {
   );
 }
 
-/* 2. TRUST STRIP ----------------------------------------------------------- */
+/* 2. TRUST STRIP – full width, centred; titles never break across lines (English) ------------ */
 export function TrustStrip({ lang }: { lang: Lang }) {
   const { trust, ui } = getContent(lang);
   return (
     <section aria-label={ui.trustLabel} className="border-y border-navy/10 bg-white">
-      <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-5 px-4 py-6 sm:px-6 md:grid-cols-4 lg:grid-cols-5">
+      <ul className="mx-auto grid w-full max-w-[1600px] grid-cols-2 gap-x-3 gap-y-6 px-4 py-6 sm:flex sm:flex-wrap sm:items-center sm:justify-evenly sm:gap-x-8 sm:px-6 lg:px-10">
         {trust.map((t) => (
-          <li key={t.title} className="flex items-center gap-3">
+          <li key={t.title} className="flex flex-col items-center gap-2 text-center sm:flex-row sm:gap-3 sm:text-left">
             <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-mint text-brand-green-dark">
               <Icon name={t.icon} className="h-6 w-6" />
             </span>
             <span className="leading-tight">
-              <span className="block text-sm font-bold text-navy">{t.title}</span>
-              <span className="block text-xs text-muted">{t.text}</span>
+              <span className={`block text-sm font-bold text-navy ${lang === "en" ? "whitespace-nowrap" : ""}`}>{t.title}</span>
+              <span className="block max-w-[11rem] text-xs text-muted">{t.text}</span>
             </span>
           </li>
         ))}
@@ -298,13 +298,16 @@ export function AdmissionSteps({ lang, detailsLink = true }: { lang: Lang; detai
   );
 }
 
-/* 7. FOUNDER --------------------------------------------------------------- */
+/* 7. FOUNDER – uses the supplied professional portrait ------------------------------------- */
 export function FounderPreview({ lang }: { lang: Lang }) {
   const { founder, images, ui } = getContent(lang);
   return (
     <Section bg="mint" id="founder">
-      <div className="grid items-center gap-8 md:grid-cols-[1fr_1.4fr]">
-        <Photo img={images.founderMicroscope} sizes="(max-width: 768px) 100vw, 40vw" className="aspect-[4/3] shadow-card" />
+      <div className="grid items-center gap-8 md:grid-cols-[0.8fr_1.4fr] lg:gap-12">
+        <div className="relative mx-auto w-full max-w-sm md:max-w-none">
+          <div aria-hidden="true" className="absolute -bottom-3 -right-3 left-3 top-3 rounded-2xl bg-gold/40" />
+          <Photo img={images.founderPortrait} sizes="(max-width: 768px) 80vw, 380px" className="relative aspect-[4/5] shadow-card" />
+        </div>
         <div>
           <SectionHeading title={founder.heading} ta={founder.headingTa} />
           <p className="-mt-4 text-lg font-bold text-navy">{ui.founderName}</p>

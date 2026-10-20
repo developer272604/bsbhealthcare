@@ -3,8 +3,8 @@ import Link from "next/link";
 import { images, site } from "@/lib/content";
 import { getContent, lp, type Lang } from "@/lib/i18n";
 import { fullAddress, telHref, waLink } from "@/lib/utils";
-import { LangSwitch } from "./LangSwitch";
-import { Ta, Txt } from "./Txt";
+import { FacebookIcon, Icon, InstagramIcon, WhatsAppIcon } from "./Icon";
+import { Txt } from "./Txt";
 
 function Col({ title, links, lang }: { title: string; links: { label: string; href: string }[]; lang: Lang }) {
   return (
@@ -23,6 +23,23 @@ function Col({ title, links, lang }: { title: string; links: { label: string; hr
   );
 }
 
+function ContactRow({ icon, label, children }: { icon: string; label: string; children: React.ReactNode }) {
+  return (
+    <li className="flex items-start gap-3">
+      <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-gold">
+        <Icon name={icon} className="h-4 w-4" />
+      </span>
+      <span className="pt-1">
+        <span className="sr-only">{label}: </span>
+        {children}
+      </span>
+    </li>
+  );
+}
+
+const social =
+  "inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition duration-200 hover:-translate-y-0.5 hover:bg-gold hover:text-navy";
+
 export function Footer({ lang }: { lang: Lang }) {
   const c = getContent(lang);
   const { ui, footerLinks, disclaimers } = c;
@@ -33,49 +50,62 @@ export function Footer({ lang }: { lang: Lang }) {
           <div className="lg:col-span-2">
             <Image src={images.logo.src} alt={c.images.logo.alt} width={images.logo.w} height={images.logo.h} loading="lazy" sizes="200px" className="h-12 w-auto" />
             <p className="mt-3 text-sm font-bold text-gold">{c.site.tagline}</p>
-            {lang === "en" && c.site.taglineTa && (
-              <Ta as="p" className="text-sm text-white/85">
-                {c.site.taglineTa}
-              </Ta>
-            )}
-            <address className="mt-4 space-y-1.5 text-sm not-italic text-white/85">
-              <p>
+
+            <ul className="mt-5 space-y-3 text-sm text-white/90">
+              <ContactRow icon="map" label={ui.address}>
                 {fullAddress()}
                 <br />
                 <span className="text-white/70">
                   <Txt>{site.address.confirm}</Txt>
                 </span>
-              </p>
-              <p>
-                {ui.phoneLabel}{" "}
+              </ContactRow>
+              <ContactRow icon="phone" label={ui.phoneLabel}>
                 <a href={telHref} data-track="click_call" data-track-location="footer" className="font-semibold underline-offset-4 hover:underline">
                   {site.phoneDisplay}
                 </a>
-              </p>
-              <p>
-                {ui.emailLabel}{" "}
+              </ContactRow>
+              <ContactRow icon="mail" label={ui.emailLabel}>
                 <a href={`mailto:${site.email}`} className="underline-offset-4 hover:underline">
                   {site.email}
                 </a>
-              </p>
-              <p>
-                {ui.hoursLabel} {c.site.hours.display} <Txt>{site.hours.confirm}</Txt>
-              </p>
-            </address>
-            <p className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-              <a href={waLink(c.waMessages.general)} target="_blank" rel="noopener noreferrer" data-track="click_whatsapp" data-track-location="footer" className="underline-offset-4 hover:underline">
-                WhatsApp
-              </a>
-              <a href={site.facebook} target="_blank" rel="noopener noreferrer" className="underline-offset-4 hover:underline">
-                Facebook
-              </a>
-              <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className="underline-offset-4 hover:underline">
-                Google Maps
-              </a>
-            </p>
-            <div className="mt-4">
-              <LangSwitch lang={lang} ariaLabel={ui.language} />
-            </div>
+              </ContactRow>
+              <ContactRow icon="clock" label={ui.hoursLabel}>
+                {c.site.hours.display} <Txt>{site.hours.confirm}</Txt>
+              </ContactRow>
+            </ul>
+
+            <ul className="mt-5 flex flex-wrap items-center gap-3" aria-label="Social">
+              <li>
+                <a
+                  href={waLink(c.waMessages.general)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-track="click_whatsapp"
+                  data-track-location="footer"
+                  aria-label="WhatsApp"
+                  className={social}
+                >
+                  <WhatsAppIcon className="h-5 w-5" />
+                </a>
+              </li>
+              <li>
+                <a href={site.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={social}>
+                  <FacebookIcon className="h-5 w-5" />
+                </a>
+              </li>
+              {site.instagram && (
+                <li>
+                  <a href={site.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={social}>
+                    <InstagramIcon className="h-5 w-5" />
+                  </a>
+                </li>
+              )}
+              <li>
+                <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" aria-label={ui.openInMaps} className={social}>
+                  <Icon name="map" className="h-5 w-5" />
+                </a>
+              </li>
+            </ul>
           </div>
           <Col lang={lang} title={ui.footerAcademy} links={footerLinks.academy} />
           <Col lang={lang} title={ui.footerHomeCare} links={footerLinks.homeCare} />
@@ -85,18 +115,7 @@ export function Footer({ lang }: { lang: Lang }) {
           </div>
         </div>
 
-        <div className="mt-10 rounded-xl border border-white/15 bg-white/5 p-4 text-sm">
-          <p className="font-bold">
-            {disclaimers.emergency}
-            {disclaimers.emergencyTa && lang === "en" && (
-              <>
-                {" "}
-                <Ta className="font-normal text-white/85">{disclaimers.emergencyTa}</Ta>
-              </>
-            )}
-          </p>
-          <p className="mt-2 text-white/75">{disclaimers.medical}</p>
-        </div>
+        <p className="mt-10 rounded-xl border border-white/15 bg-white/5 p-4 text-sm text-white/75">{disclaimers.medical}</p>
 
         <p className="mt-6 text-center text-xs text-white/70">
           © {new Date().getFullYear()} {site.name}. {ui.rights}

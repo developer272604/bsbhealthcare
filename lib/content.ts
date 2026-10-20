@@ -56,12 +56,14 @@ export const site = {
     schema: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "07:00", closes: "20:00" },
   },
   facebook: "https://www.facebook.com/labbalaloyolacollege",
+  // [CONFIRM: Instagram profile URL] – the footer shows the Instagram icon only when this is filled in
+  instagram: "",
   mapsUrl: "https://maps.google.com/?cid=183553982738219178",
   mapsEmbed: "https://www.google.com/maps?cid=183553982738219178&output=embed",
   // [CONFIRM: GA4 measurement ID] – set NEXT_PUBLIC_GA_ID in Vercel
   ga4Id: process.env.NEXT_PUBLIC_GA_ID ?? "",
-  // [CONFIRM: total experience 50 years] – one figure, used everywhere
-  experience: "50 years",
+  // [CONFIRM: total experience 50+ years] – one figure, used everywhere
+  experience: "50+ years",
   experienceNumber: "50",
   logo: "/images/logo.png",
 };
@@ -192,7 +194,7 @@ export const seo: Record<string, SeoEntry> = {
   "/": {
     title: "POCT Training & Home Health Care in Chennai | BSB",
     description:
-      "Learn Point-of-Care Testing in Tamil from a 50-year lab veteran, or book blood tests, nursing & physio at home in Chennai. Call +91 99405 81843.",
+      "Learn Point-of-Care Testing in Tamil from a 50+ year lab veteran, or book blood tests, nursing & physio at home in Chennai. Call +91 99405 81843.",
     og: "home",
     keywords: [
       "point of care testing course Chennai",
@@ -206,7 +208,7 @@ export const seo: Record<string, SeoEntry> = {
       "BSB Health Care Chennai",
     ],
     answer:
-      "BSB Health Care in Chennai teaches Point-of-Care Testing and a 1-month Health Assistant for Diabetics course in Tamil, and provides home blood tests, nursing, physiotherapy, doctor visits and diabetic diet plans. It is led by M.R. Balachandran, a retired laboratory technician with 50 years of experience.",
+      "BSB Health Care in Chennai teaches Point-of-Care Testing and a 1-month Health Assistant for Diabetics course in Tamil, and provides home blood tests, nursing, physiotherapy, doctor visits and diabetic diet plans. It is led by M.R. Balachandran, a retired laboratory technician with 50+ years of experience.",
   },
   "/academy": {
     title: "Health Skills Academy – Practical Courses in Chennai",
@@ -282,12 +284,12 @@ export const seo: Record<string, SeoEntry> = {
       "diabetic care at home Chennai",
     ],
     answer:
-      "BSB Home Health Care provides blood sample collection, home nursing, physiotherapy, doctor consultation and diabetic diet guidance at home in Ekkattuthangal, Guindy, Velachery, Madipakkam and nearby areas of Chennai. Call or WhatsApp +91 99405 81843 to book. It is not an emergency service — call 108.",
+      "BSB Home Health Care provides blood sample collection, home nursing, physiotherapy, doctor consultation and diabetic diet guidance at home in Ekkattuthangal, Guindy, Velachery, Madipakkam and nearby areas of Chennai. Call or WhatsApp +91 99405 81843 to book.",
   },
   "/home-care/blood-test-at-home": {
     title: "Blood Test at Home in Chennai | Sugar, HbA1c, Thyroid",
     description:
-      "Book a blood test at home in Chennai: sugar, HbA1c, lipid, thyroid, CBC. Sterile single-use kits, digital reports, led by a 50-year lab veteran.",
+      "Book a blood test at home in Chennai: sugar, HbA1c, lipid, thyroid, CBC. Sterile single-use kits, digital reports, led by a 50+ year lab veteran.",
     og: "home-care",
     keywords: [
       "blood test at home Chennai",
@@ -340,7 +342,7 @@ export const seo: Record<string, SeoEntry> = {
       "general physician home visit",
     ],
     answer:
-      "A registered allopathic doctor can visit your home in Chennai or consult by video, examine you, review your reports, prescribe treatment and plan follow-up. It is not an emergency service; for emergencies call 108.",
+      "A registered allopathic doctor can visit your home in Chennai or consult by video, examine you, review your reports, prescribe treatment and plan follow-up.",
   },
   "/home-care/diabetic-diet-and-supplements": {
     title: "Diabetic Diet Plan & Supplements in Chennai",
@@ -372,19 +374,19 @@ export const seo: Record<string, SeoEntry> = {
       "Complete Diabetic Care at home rests on seven pillars: diabetic education, medication management, blood glucose monitoring, wound care, diet and nutrition, physical activity and emotional support. BSB brings trained help for each pillar to families in Chennai; medicines are changed only by a doctor.",
   },
   "/about": {
-    title: "M.R. Balachandran – 50 Years in Labs | BSB Chennai",
+    title: "M.R. Balachandran – 50+ Years in Labs | BSB Chennai",
     description:
-      "Meet M.R. Balachandran, founder of BSB Health Care Chennai: 50 years in medical labs, 37 at Madras Medical College. Legacy, photos, community work.",
+      "Meet M.R. Balachandran, founder of BSB Health Care Chennai: 50+ years in medical labs, 37 at Madras Medical College. Legacy, photos, community work.",
     og: "about",
     keywords: [
       "M.R. Balachandran",
       "BSB Health Care founder",
       "Madras Medical College laboratory technician",
       "Lions Club Royal Ullagaram",
-      "50 years medical laboratory experience Chennai",
+      "50+ years medical laboratory experience Chennai",
     ],
     answer:
-      "M.R. Balachandran is a retired Medical Laboratory Technician with 50 years of experience, including 37 years at the Institute of Obstetrics & Gynaecology, Madras Medical College, under 21 directors. He founded BSB Health Care in Chennai and is a member of the Lions Club of Royal Ullagaram, District 324J.",
+      "M.R. Balachandran is a retired Medical Laboratory Technician with 50+ years of experience, including 37 years at the Institute of Obstetrics & Gynaecology, Madras Medical College, under 21 directors. He founded BSB Health Care in Chennai and is a member of the Lions Club of Royal Ullagaram, District 324J.",
   },
   "/contact": {
     title: "Contact BSB Health Care – Chennai | Call & WhatsApp",
@@ -398,7 +400,7 @@ export const seo: Record<string, SeoEntry> = {
       "WhatsApp +91 99405 81843",
     ],
     answer:
-      "BSB Health Care is at #35, Jawaharlal Nehru Salai, Ambal Nagar Bus Stop, Ekkattuthangal, Chennai 600032. Call or WhatsApp +91 99405 81843, Monday to Saturday 7:00 AM to 8:00 PM. It is not an emergency service; call 108 in an emergency.",
+      "BSB Health Care is at #35, Jawaharlal Nehru Salai, Ambal Nagar Bus Stop, Ekkattuthangal, Chennai 600032. Call or WhatsApp +91 99405 81843, Monday to Saturday 7:00 AM to 8:00 PM.",
   },
   "/privacy-policy": {
     title: "Privacy Policy | BSB Health Care – Chennai",
@@ -410,7 +412,7 @@ export const seo: Record<string, SeoEntry> = {
   "/terms": {
     title: "Terms of Use & Medical Disclaimer | BSB Health Care",
     description:
-      "Terms of use, service terms and medical disclaimer for BSB Health Care – Chennai. Not an emergency service; in an emergency call 108.",
+      "Terms of use, service terms and medical disclaimer for BSB Health Care – Chennai. Please read before booking a course or a home visit.",
     og: "legal",
     keywords: ["BSB Health Care terms", "medical disclaimer"],
   },
@@ -441,7 +443,7 @@ export const images = {
   logo: img("logo.png", "BSB Home Health Care logo – gold globe and the tagline The Complete Diabetic Care", 600, 214),
   logoSquare: img("logo-square.png", "BSB Home Health Care logo on navy background", 512, 512),
   heroExecutive: img("hero-executive.webp", "M.R. Balachandran, founder of BSB Health Care, with arms folded", 820, 772),
-  heroEmblem: img("hero-emblem.webp", "50 years of experience gold emblem", 400, 323),
+  heroEmblem: img("hero-emblem.webp", "50+ years of experience gold emblem", 400, 323),
   founderPortrait: img("founder-portrait.jpg", "Portrait of M.R. Balachandran, founder of BSB Health Care, Chennai", 800, 1000),
   founderMicroscope: img("founder-microscope-lab.jpg", "M.R. Balachandran examining a slide under a microscope in the laboratory"),
   mmcWall: img("mmc-wall-of-directors.jpg", "Wall of directors at the Institute of Obstetrics & Gynaecology, Madras Medical College"),
@@ -751,7 +753,7 @@ export const homeCare: {
     h1: "Home Health Care Services in Chennai",
     ta: "",
     intro:
-      "BSB Home Health Care brings trusted, affordable health services to your doorstep across Chennai — led by a medical laboratory professional with 50 years of experience. Whether you are looking after a diabetic parent, recovering from surgery or simply cannot travel for tests, our team comes to you.",
+      "BSB Home Health Care brings trusted, affordable health services to your doorstep across Chennai — led by a medical laboratory professional with 50+ years of experience. Whether you are looking after a diabetic parent, recovering from surgery or simply cannot travel for tests, our team comes to you.",
     howTitle: "How booking works",
     how: [
       { title: "Call or WhatsApp", text: "Tell us the service you need and your area in Chennai." },
@@ -777,7 +779,7 @@ export const homeCare: {
       h1: "Blood Test at Home in Chennai",
       card: "Sample collection at your doorstep with sterile kits and digital reports.",
       intro:
-        "Skip the queue and the fasting-hour travel. Our trained technician visits your home in Ekkattuthangal, Guindy, Velachery and nearby areas of Chennai to collect blood and urine samples using sterile, single-use kits. The service is led by M.R. Balachandran, a medical laboratory professional with 50 years of experience, so your sample is handled the way a hospital laboratory would handle it.",
+        "Skip the queue and the fasting-hour travel. Our trained technician visits your home in Ekkattuthangal, Guindy, Velachery and nearby areas of Chennai to collect blood and urine samples using sterile, single-use kits. The service is led by M.R. Balachandran, a medical laboratory professional with 50+ years of experience, so your sample is handled the way a hospital laboratory would handle it.",
       included: [
         "Fasting and post-prandial (PP) blood sugar",
         "HbA1c for 3-month sugar control",
@@ -864,10 +866,6 @@ export const homeCare: {
         {
           q: "Can a nurse look after a diabetic foot wound?",
           a: "Yes, a trained nurse can clean and dress a diabetic foot wound and watch for signs of infection. If the wound worsens, we advise you to see your doctor immediately.",
-        },
-        {
-          q: "Is this suitable for emergencies?",
-          a: "No. For chest pain, breathing difficulty, unconsciousness or other emergencies, call 108 immediately.",
         },
         {
           q: "Can I book a nurse for a few days only?",
@@ -964,10 +962,6 @@ export const homeCare: {
         "Doctor home visits are offered in Ekkattuthangal, Guindy, Ullagaram, Madipakkam, Velachery, Nanganallur, Ashok Nagar and K.K. Nagar. Video consultations are available across Chennai.",
       confirm: "[CONFIRM: doctor name, qualification and medical council registration number – do not publish until verified]",
       faqs: [
-        {
-          q: "Is this an emergency service?",
-          a: "No. For chest pain, severe breathlessness, stroke symptoms, unconsciousness or very low sugar with confusion, call 108 immediately.",
-        },
         {
           q: "Will the doctor prescribe medicines?",
           a: "Yes. A registered doctor can prescribe after examining the patient. Our nurses, technicians and health assistants never prescribe on their own.",
@@ -1186,13 +1180,13 @@ export const about = {
     title: `${site.experience} of service in medical laboratories`,
     text: "Every student at BSB learns from a professional who has spent half a century inside hospital laboratories — taking real samples, reading real results and training colleagues. That depth of experience is behind every course and every home visit.",
     items: [
-      { value: Number(site.experienceNumber), label: "Years in medical laboratory service", icon: "award" },
-      { value: 37, label: "Years at the Institute of Obstetrics & Gynaecology, Madras Medical College", icon: "hospital" },
-      { value: 21, label: "Directors served under during his MMC career", icon: "users" },
+      { value: Number(site.experienceNumber), suffix: "+", label: "Years in medical laboratory service", icon: "award" },
+      { value: 37, suffix: "", label: "Years at the Institute of Obstetrics & Gynaecology, Madras Medical College", icon: "hospital" },
+      { value: 21, suffix: "", label: "Directors served under during his MMC career", icon: "users" },
     ],
-    confirm: "[CONFIRM: total experience 50 years]",
+    confirm: "[CONFIRM: total experience 50+ years]",
   },
-  timelineTitle: "His story",
+  timelineTitle: "A lifetime in the laboratory",
   timeline: [
     {
       when: "[CONFIRM: year]",
@@ -1242,7 +1236,7 @@ export const about = {
       },
     ],
   },
-  ctaTitle: `Learn from a ${site.experienceNumber}-year lab veteran`,
+  ctaTitle: `Learn from a ${site.experienceNumber}+ year lab veteran`,
   ctaTa: "",
   missionTitle: "Mission & vision",
   missionLabel: "Mission",
@@ -1549,10 +1543,6 @@ export const homeFaqs: Faq[] = [
     q: "How do I book a home blood test?",
     a: "Call or WhatsApp +91 99405 81843 with the tests you need and your area. We confirm the time slot and price, a trained technician collects the sample at home, and the digital report is sent to you.",
   },
-  {
-    q: "Is this an emergency service?",
-    a: "No. BSB Health Care is not an emergency service. In an emergency, call 108.",
-  },
 ];
 
 /* ----------------------------------------------------------------------------
@@ -1839,7 +1829,7 @@ export const ui = {
   feeDetailsFor: "Fee details for each course:",
   readRefund: "Read the refund policy",
   applicationHeading: "Application – BSB Health Skills Academy",
-  applyOnWhatsApp: "Apply on WhatsApp",
+  applyOnWhatsApp: "Apply",
   fullName: "Full name",
   mobileNumber: "Mobile number",
   tenDigit: "10-digit number",
@@ -1851,7 +1841,13 @@ export const ui = {
   formLabels: {
     select: "Select…",
     privacyNote: "This opens WhatsApp with your details pre-filled. Nothing is stored on this website.",
-    phoneError: "Please enter a valid 10-digit mobile number.",
+    phoneError: "Enter a valid 10-digit mobile number starting with 6, 7, 8 or 9.",
+    required: "This field is required.",
+    chooseOne: "Please choose an option.",
+    invalidName: "Use letters only (2–60 characters).",
+    invalidText: "Use letters, numbers and basic punctuation only.",
+    tooShort: "Please enter at least 2 characters.",
+    charsLeft: "characters left",
   },
   gallery: {
     enlarge: "Enlarge photo",
@@ -1866,7 +1862,6 @@ export const ui = {
   areasNotSure: "Not sure if we cover your street? Message us — we will confirm quickly.",
   caringDiabetes: "Caring for someone with diabetes?",
   caringDiabetesText: "See how our seven pillars of care work together at home.",
-  notEmergency: "Not an emergency service",
   whatsIncluded: "What’s included",
   howItWorks: "How it works",
   whoIsItFor: "Who is it for?",
