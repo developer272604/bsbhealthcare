@@ -33,7 +33,7 @@ export function Footer({ lang }: { lang: Lang }) {
           <div className="lg:col-span-2">
             <Image src={images.logo.src} alt={c.images.logo.alt} width={images.logo.w} height={images.logo.h} loading="lazy" sizes="200px" className="h-12 w-auto" />
             <p className="mt-3 text-sm font-bold text-gold">{c.site.tagline}</p>
-            {lang === "en" && (
+            {lang === "en" && c.site.taglineTa && (
               <Ta as="p" className="text-sm text-white/85">
                 {c.site.taglineTa}
               </Ta>
@@ -88,7 +88,7 @@ export function Footer({ lang }: { lang: Lang }) {
         <div className="mt-10 rounded-xl border border-white/15 bg-white/5 p-4 text-sm">
           <p className="font-bold">
             {disclaimers.emergency}
-            {lang === "en" && (
+            {disclaimers.emergencyTa && lang === "en" && (
               <>
                 {" "}
                 <Ta className="font-normal text-white/85">{disclaimers.emergencyTa}</Ta>

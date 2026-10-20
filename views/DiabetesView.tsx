@@ -44,7 +44,7 @@ export function DiabetesView({ lang }: { lang: Lang }) {
           <Card className="bg-mint">
             <p className="text-sm font-bold uppercase tracking-wide text-brand-green-dark">{ui.ourMission}</p>
             <p className="mt-2 text-lg font-bold text-navy">{site.mission}</p>
-            {lang === "en" && (
+            {lang === "en" && site.missionTa && (
               <Ta as="p" className="mt-2 text-sm text-muted">
                 {site.missionTa}
               </Ta>

@@ -112,7 +112,7 @@ export function AboutView({ lang }: { lang: Lang }) {
               <div>
                 <p className="text-sm font-bold uppercase tracking-wide text-brand-green-dark">{about.missionLabel}</p>
                 <p className="text-lg font-bold text-navy">{site.mission}</p>
-                {lang === "en" && (
+                {lang === "en" && c.site.missionTa && (
                   <Ta as="p" className="text-muted">
                     {site.missionTa}
                   </Ta>

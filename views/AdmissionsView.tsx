@@ -145,9 +145,7 @@ export function AdmissionsView({ lang }: { lang: Lang }) {
             />
           </Card>
           <div className="mt-4 text-center">
-            <Ta as="p" className="text-sm text-muted">
-              {ui.noFormTa}
-            </Ta>
+            <p className="text-sm text-muted">{ui.noFormTa}</p>
             <WhatsAppButton lang={lang} className="mt-2" message={waMessages.apply} label={ui.messageDirectly} where="admissions-direct" />
           </div>
         </div>

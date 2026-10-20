@@ -26,9 +26,9 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bsbhealthcare.in").replace(/\/$/, ""),
   locale: "en-IN",
   tagline: "The Complete Diabetic Care",
-  taglineTa: "முழுமையான நீரிழிவு பராமரிப்பு",
+  taglineTa: "",
   mission: "A trained health assistant in every family affected by diabetes in Tamil Nadu.",
-  missionTa: "தமிழ்நாட்டில் நீரிழிவால் பாதிக்கப்பட்ட ஒவ்வொரு குடும்பத்திற்கும் ஒரு பயிற்சி பெற்ற சுகாதார உதவியாளர்.",
+  missionTa: "",
   vision:
     "Practical, affordable healthcare skills in Tamil for every family — so that routine health checks and diabetic care are never out of reach.",
   phoneDisplay: "+91 99405 81843",
@@ -92,7 +92,7 @@ export const areasConfirm = "[CONFIRM: final list of areas served]";
 
 export const disclaimers = {
   emergency: "Not an emergency service. In an emergency, call 108.",
-  emergencyTa: "இது அவசர சேவை அல்ல. அவசரத்தில் 108-ஐ அழைக்கவும்.",
+  emergencyTa: "",
   medical:
     "Information on this website is for general awareness and does not replace advice from a registered doctor. Our trained assistants do not prescribe or change medicines.",
   supplements:
@@ -518,7 +518,7 @@ export const skills: Skill[] = [
   {
     slug: "body-weight",
     en: "Body Weight",
-    ta: "உடல் எடை",
+    ta: "",
     icon: "scale",
     what: "Measuring body weight correctly with a digital weighing scale and recording it on a health card.",
     why: "Sudden weight gain or loss is one of the earliest signs that diabetes, thyroid or heart conditions need attention.",
@@ -527,7 +527,7 @@ export const skills: Skill[] = [
   {
     slug: "bmi",
     en: "BMI – Body Mass Index",
-    ta: "BMI உடல் பருமன் குறியீடு",
+    ta: "",
     icon: "bmi",
     what: "Measuring height and weight, calculating BMI and placing the result in a healthy, overweight or obese range.",
     why: "BMI helps families see risk for diabetes and high blood pressure early and decide when to speak to a doctor.",
@@ -536,7 +536,7 @@ export const skills: Skill[] = [
   {
     slug: "temperature",
     en: "Temperature",
-    ta: "வெப்பநிலை",
+    ta: "",
     icon: "thermometer",
     what: "Taking body temperature with digital and infrared thermometers and recognising fever ranges.",
     why: "Fever is the first signal of infection — especially important for diabetic and elderly patients, who get sick faster.",
@@ -545,7 +545,7 @@ export const skills: Skill[] = [
   {
     slug: "spo2",
     en: "SpO₂ – Oxygen Level",
-    ta: "SpO₂ ஆக்சிஜன் அளவு",
+    ta: "",
     icon: "spo2",
     what: "Using a pulse oximeter to read blood oxygen saturation and pulse rate.",
     why: "A low oxygen reading can signal breathing or heart trouble that needs a doctor quickly.",
@@ -554,7 +554,7 @@ export const skills: Skill[] = [
   {
     slug: "blood-sugar",
     en: "Blood Sugar",
-    ta: "இரத்த சர்க்கரை",
+    ta: "",
     icon: "drop",
     what: "Checking capillary blood glucose with a glucometer — fasting and post-meal — using safe, hygienic technique.",
     why: "Blood sugar checking is the single most useful skill for diabetic families and health camps.",
@@ -563,7 +563,7 @@ export const skills: Skill[] = [
   {
     slug: "haemoglobin",
     en: "Haemoglobin",
-    ta: "ஹீமோகுளோபின்",
+    ta: "",
     icon: "hb",
     what: "Measuring haemoglobin with a point-of-care meter to screen for low blood levels (anaemia).",
     why: "Anaemia is common among women and teenage girls; early screening helps them get proper medical advice.",
@@ -572,7 +572,7 @@ export const skills: Skill[] = [
   {
     slug: "urine-testing",
     en: "Urine Testing",
-    ta: "சிறுநீர் பரிசோதனை",
+    ta: "",
     icon: "urine",
     what: "Screening urine with dipsticks for sugar, protein, ketones and other basic parameters.",
     why: "Urine sugar and protein can reveal diabetes and early kidney problems before symptoms appear.",
@@ -584,7 +584,7 @@ export const skills: Skill[] = [
  * 7. HOMEPAGE: hero, trust strip, why, steps
  * ------------------------------------------------------------------------- */
 export const hero = {
-  ta: "சுகாதாரத் துறையில் PRACTICAL SKILL கற்றுக்கொள்ள விருப்பமா?",
+  ta: "",
   h1: "Point-of-Care Testing Practical Training & Home Health Care in Chennai",
   sub: `Learn real healthcare skills in Tamil from M.R. Balachandran — ${site.experience} in medical laboratory service, Madras Medical College.`,
   ctaApply: "Apply for Training",
@@ -619,25 +619,25 @@ export const trust: { icon: string; title: string; text: string }[] = [
 ];
 
 export const whyTraining = {
-  titleTa: "ஏன் இந்த TRAINING?",
+  titleTa: "",
   title: "Why this training?",
   points: [
-    { icon: "hands", en: "Learn basic health tests fully hands-on", ta: "அடிப்படை பரிசோதனைகளை நேரடியாக கற்றுக்கொள்ளுங்கள்" },
-    { icon: "briefcase", en: "Improve job opportunities in the medical field", ta: "மருத்துவ துறையில் வேலை வாய்ப்பை அதிகரிக்கவும்" },
-    { icon: "rocket", en: "Gain skills for self-employment", ta: "சுயதொழிலுக்கான திறன்களைப் பெறுங்கள்" },
-    { icon: "certificate", en: "Get recognised with a certificate", ta: "சான்றிதழ் மூலம் அங்கீகாரம் பெறுங்கள்" },
+    { icon: "hands", en: "Learn basic health tests fully hands-on", ta: "" },
+    { icon: "briefcase", en: "Improve job opportunities in the medical field", ta: "" },
+    { icon: "rocket", en: "Gain skills for self-employment", ta: "" },
+    { icon: "certificate", en: "Get recognised with a certificate", ta: "" },
   ],
 };
 
 export const admissionSteps = {
   title: "Admission in 5 steps",
-  titleTa: "5 எளிய படிகளில் சேர்க்கை",
+  titleTa: "",
   steps: [
-    { n: 1, en: "Call / WhatsApp us", ta: "அழைக்கவும் / WhatsApp", text: "Tell us your qualification and the course you want." },
-    { n: 2, en: "Register", ta: "பதிவு செய்யுங்கள்", text: "Share your documents and confirm your seat." },
-    { n: 3, en: "Practical Training", ta: "செய்முறைப் பயிற்சி", text: "Attend hands-on classes in small batches, in Tamil." },
-    { n: 4, en: "Certificate", ta: "சான்றிதழ்", text: "Receive your certificate of completion." },
-    { n: 5, en: "Placement Support", ta: "வேலைவாய்ப்பு உதவி", text: "We guide you towards job and self-employment options." },
+    { n: 1, en: "Call / WhatsApp us", ta: "", text: "Tell us your qualification and the course you want." },
+    { n: 2, en: "Register", ta: "", text: "Share your documents and confirm your seat." },
+    { n: 3, en: "Practical Training", ta: "", text: "Attend hands-on classes in small batches, in Tamil." },
+    { n: 4, en: "Certificate", ta: "", text: "Receive your certificate of completion." },
+    { n: 5, en: "Placement Support", ta: "", text: "We guide you towards job and self-employment options." },
   ],
 };
 
@@ -649,7 +649,7 @@ export const courses = {
     slug: "point-of-care-testing",
     href: "/academy/point-of-care-testing",
     title: "POCT Practical Training",
-    ta: "பாயின்ட்-ஆஃப்-கேர் டெஸ்டிங் செய்முறைப் பயிற்சி",
+    ta: "",
     full: "Point-of-Care Testing (POCT) Practical Training",
     // [CONFIRM: duration]
     duration: "[CONFIRM: duration]",
@@ -666,7 +666,7 @@ export const courses = {
     slug: "health-assistant-for-diabetics",
     href: "/academy/health-assistant-for-diabetics",
     title: "Health Assistant for Diabetics",
-    ta: "நீரிழிவு நோயாளிகளுக்கான உடல்நல உதவியாளர் படிப்பு",
+    ta: "",
     full: "Health Assistant for Diabetics – 1-Month Course",
     duration: "1 month",
     mode: "Direct or distance learning",
@@ -685,7 +685,7 @@ export const courses = {
  * ------------------------------------------------------------------------- */
 export const founder = {
   heading: "Meet the founder",
-  headingTa: "நிறுவனர் அறிமுகம்",
+  headingTa: "",
   short: `M.R. Balachandran is a retired Medical Laboratory Technician who served 37 years at the Institute of Obstetrics & Gynaecology, Madras Medical College, under 21 directors. With ${site.experience} in laboratory service, he now teaches practical health skills in Tamil and leads home health care for diabetic families in Chennai. He is a member of the Lions Club of Royal Ullagaram, District 324J.`,
   cta: "Read full story",
 };
@@ -731,7 +731,7 @@ export const homeCare: {
 } = {
   overview: {
     h1: "Home Health Care Services in Chennai",
-    ta: "வீட்டிலேயே சுகாதார சேவைகள்",
+    ta: "",
     intro:
       "BSB Home Health Care brings trusted, affordable health services to your doorstep across Chennai — led by a medical laboratory professional with 50 years of experience. Whether you are looking after a diabetic parent, recovering from surgery or simply cannot travel for tests, our team comes to you.",
     howTitle: "How booking works",
@@ -754,7 +754,7 @@ export const homeCare: {
       slug: "blood-test-at-home",
       href: "/home-care/blood-test-at-home",
       name: "Blood Test at Home",
-      ta: "வீட்டிலேயே இரத்தப் பரிசோதனை",
+      ta: "",
       icon: "drop",
       h1: "Blood Test at Home in Chennai",
       card: "Sample collection at your doorstep with sterile kits and digital reports.",
@@ -809,7 +809,7 @@ export const homeCare: {
       slug: "home-nursing",
       href: "/home-care/home-nursing",
       name: "Home Nursing",
-      ta: "வீட்டு செவிலியர் சேவை",
+      ta: "",
       icon: "nurse",
       h1: "Home Nursing in Chennai",
       card: "Injections, wound and diabetic foot dressing, vitals and post-hospital care.",
@@ -864,7 +864,7 @@ export const homeCare: {
       slug: "physiotherapy-at-home",
       href: "/home-care/physiotherapy-at-home",
       name: "Physiotherapy at Home",
-      ta: "வீட்டிலேயே பிசியோதெரபி",
+      ta: "",
       icon: "physio",
       h1: "Physiotherapy at Home in Chennai",
       card: "Knee and back pain, stroke rehab, post-surgery recovery and fall prevention.",
@@ -916,7 +916,7 @@ export const homeCare: {
       slug: "doctor-consultation-at-home",
       href: "/home-care/doctor-consultation-at-home",
       name: "Doctor Consultation at Home",
-      ta: "மருத்துவர் வீட்டு ஆலோசனை",
+      ta: "",
       icon: "stethoscope",
       h1: "Doctor Consultation at Home in Chennai",
       card: "Registered allopathic doctor visits or video consults, report review and follow-up.",
@@ -967,7 +967,7 @@ export const homeCare: {
       slug: "diabetic-diet-and-supplements",
       href: "/home-care/diabetic-diet-and-supplements",
       name: "Diabetic Diet & Supplements",
-      ta: "நீரிழிவு உணவு & சப்ளிமெண்ட்ஸ்",
+      ta: "",
       icon: "apple",
       h1: "Diabetic Diet Plan & Supplements in Chennai",
       card: "South Indian diabetic meal plans, portion control and supplement guidance.",
@@ -1021,7 +1021,7 @@ export const homeCare: {
  * ------------------------------------------------------------------------- */
 export const diabetesCare = {
   h1: "Complete Diabetic Care at Home in Chennai",
-  ta: "முழுமையான நீரிழிவு பராமரிப்பு — உங்கள் வீட்டிலேயே",
+  ta: "",
   intro:
     "Diabetes is a lifelong condition, but with the right knowledge, regular monitoring and a trained helper at home, most families can manage it confidently. “The Complete Diabetic Care” is BSB’s way of bringing seven pillars of care together for diabetic and elderly patients in Chennai.",
   context: {
@@ -1046,7 +1046,7 @@ export const diabetesCare = {
       slug: "diabetic-education",
       icon: "book",
       title: "Diabetic Education",
-      ta: "நீரிழிவு கல்வி",
+      ta: "",
       text: "Good control starts with understanding. Patients and family members learn what diabetes is, why sugar rises and falls, what the numbers on a glucometer mean and which complications to watch for — eyes, kidneys, nerves and feet. Our assistants explain everything in simple Tamil, using the patient’s own readings and routine. When the whole family understands the condition, it becomes easier to follow the doctor’s advice, notice problems early and avoid myths such as stopping medicine when sugar looks normal.",
       link: { label: "Learn the skills in our Health Assistant course", href: "/academy/health-assistant-for-diabetics" },
     },
@@ -1054,7 +1054,7 @@ export const diabetesCare = {
       slug: "medication-management",
       icon: "pill",
       title: "Medication Management",
-      ta: "மருந்து மேலாண்மை",
+      ta: "",
       text: "Missed doses, wrong timing and confusion between tablets are common problems, especially for elders. We help families organise medicines in a weekly pill box, understand what each medicine is for, store insulin correctly and keep a written schedule. Our nurses give injections only as prescribed by a registered doctor. We never change doses or start medicines on our own — if a medicine seems to cause trouble, we guide you to speak to your doctor promptly.",
       link: { label: "Home nursing in Chennai", href: "/home-care/home-nursing" },
     },
@@ -1062,7 +1062,7 @@ export const diabetesCare = {
       slug: "blood-glucose-monitoring",
       icon: "drop",
       title: "Blood Glucose Monitoring",
-      ta: "இரத்த சர்க்கரை கண்காணிப்பு",
+      ta: "",
       text: "Regular testing shows how food, exercise, stress and medicine affect sugar. Daily finger-prick readings are noted in a log, while laboratory tests such as HbA1c show the three-month picture. Our technician can collect samples at home for fasting sugar, post-meal sugar and HbA1c, and trained assistants can teach family members to use a glucometer correctly. Sharing the readings with your doctor lets treatment be adjusted on facts rather than guesswork.",
       link: { label: "Blood test at home in Chennai", href: "/home-care/blood-test-at-home" },
     },
@@ -1070,7 +1070,7 @@ export const diabetesCare = {
       slug: "wound-care",
       icon: "bandage",
       title: "Wound Care",
-      ta: "காயப் பராமரிப்பு",
+      ta: "",
       text: "High sugar slows healing and reduces feeling in the feet, so a small blister or cut can quickly become a serious ulcer. Daily foot inspection, clean and dry dressings, well-fitting footwear and early medical review are essential. Our nurses clean and dress wounds, including diabetic foot wounds, and teach families what to look for: redness, swelling, discharge, bad smell or fever. Any wound that does not improve in a few days should be shown to a doctor without delay.",
       link: { label: "Wound and foot care by home nurses", href: "/home-care/home-nursing" },
     },
@@ -1078,7 +1078,7 @@ export const diabetesCare = {
       slug: "diet-and-nutrition",
       icon: "apple",
       title: "Diet & Nutrition",
-      ta: "உணவு & ஊட்டச்சத்து",
+      ta: "",
       text: "Diabetic eating does not mean giving up your favourite South Indian food. It means balancing portions of rice, idli, dosa and sweets with plenty of vegetables, dhal, millets and protein, and eating at regular times. We prepare simple meal plans around what your family already cooks, with portion guidance using everyday vessels. Supplements may be suggested as support, but they never replace medicine and do not cure diabetes.",
       link: { label: "Diabetic diet & supplements in Chennai", href: "/home-care/diabetic-diet-and-supplements" },
     },
@@ -1086,7 +1086,7 @@ export const diabetesCare = {
       slug: "physical-activity",
       icon: "run",
       title: "Physical Activity",
-      ta: "உடற்பயிற்சி",
+      ta: "",
       text: "Movement helps the body use insulin better and supports healthy weight, heart and mood. A daily 30-minute walk, gentle strength exercises and stretching suit most people, but the plan must match age, joint problems, foot condition and medicines. Our physiotherapists design safe routines, including for people with knee pain, after stroke or at risk of falls, and show family members how to continue at home.",
       link: { label: "Physiotherapy at home in Chennai", href: "/home-care/physiotherapy-at-home" },
     },
@@ -1094,7 +1094,7 @@ export const diabetesCare = {
       slug: "emotional-support",
       icon: "heart",
       title: "Emotional Support",
-      ta: "மன ஆதரவு",
+      ta: "",
       text: "Living with a lifelong condition can bring worry, frustration and “diabetes fatigue”. Feeling heard makes a big difference. Our team listens, encourages small wins, involves family members and notices when a patient seems low or withdrawn. A trained health assistant who visits regularly gives patients and caregivers confidence. If sadness or anxiety continues, we encourage you to talk to your doctor about further support.",
       link: { label: "Talk to our team", href: "/contact" },
     },
@@ -1103,7 +1103,7 @@ export const diabetesCare = {
     title: "Warning signs you should never ignore",
     low: {
       title: "Low sugar (hypoglycaemia)",
-      ta: "இரத்த சர்க்கரை குறைவு",
+      ta: "",
       signs: [
         "Shakiness, sweating, sudden hunger",
         "Dizziness, headache, fast heartbeat",
@@ -1114,7 +1114,7 @@ export const diabetesCare = {
     },
     high: {
       title: "High sugar (hyperglycaemia)",
-      ta: "இரத்த சர்க்கரை அதிகம்",
+      ta: "",
       signs: [
         "Extreme thirst and frequent urination",
         "Tiredness, blurred vision, slow-healing wounds",
@@ -1159,7 +1159,7 @@ export const diabetesCare = {
  * ------------------------------------------------------------------------- */
 export const about = {
   h1: "About M.R. Balachandran – Founder, BSB Health Care",
-  ta: "நிறுவனர் எம்.ஆர். பாலச்சந்திரன்",
+  ta: "",
   intro: `M.R. Balachandran is a retired Medical Laboratory Technician who has spent ${site.experience} in laboratory service. After 37 years at the Institute of Obstetrics & Gynaecology, Madras Medical College, he founded BSB Health Care to pass on practical skills to the next generation and to bring trained help into the homes of diabetic families in Chennai.`,
   /** Highlighted experience band shown directly below the intro */
   experience: {
@@ -1225,7 +1225,7 @@ export const about = {
     ],
   },
   ctaTitle: `Learn from a ${site.experienceNumber}-year lab veteran`,
-  ctaTa: "உங்கள் எதிர்காலத்தை உருவாக்குங்கள்!",
+  ctaTa: "",
   missionTitle: "Mission & vision",
   missionLabel: "Mission",
   visionLabel: "Vision",
@@ -1233,7 +1233,7 @@ export const about = {
   /* ---- Legacy & portfolio (anchor #legacy) ---- */
   legacy: {
     title: "Legacy & portfolio",
-    ta: "50 ஆண்டுகால சேவை",
+    ta: "",
     intro:
       "A selection of memories from a long career in Chennai’s medical laboratories — shared as a record of work, friendships and community service.",
     archive: {
@@ -1275,7 +1275,7 @@ export const about = {
     },
     cake: {
       title: "From the lab, with love",
-      ta: "ஆய்வகத்திலிருந்து அன்புடன்",
+      ta: "",
       text: "A cake shaped like a microscope — a gift from students and colleagues, a reminder that a laboratory career is built on people as much as instruments. [CONFIRM: who gifted it and on what occasion]",
     },
     // NOTE: photos with political or public figures are intentionally NOT included.
@@ -1290,10 +1290,10 @@ export const about = {
 export const academy = {
   whyTitle: "Why practical skills matter",
   ctaTitle: "Start your healthcare career in Tamil",
-  ctaTa: "உங்கள் எதிர்காலத்தை உருவாக்குங்கள்!",
+  ctaTa: "",
   ctaText: "Join the next practical batch at BSB Health Skills Academy, Chennai.",
   h1: "BSB Health Skills Academy – Practical Healthcare Training in Tamil",
-  ta: "BSB ஹெல்த் ஸ்கில்ஸ் அகாடமி — தமிழில் செய்முறை பயிற்சி",
+  ta: "",
   intro: [
     "Healthcare is one of the few fields where skill matters more than marks. A person who can correctly check blood sugar, oxygen level, haemoglobin and urine is useful in clinics, pharmacies, health camps and homes — and families need these people more every year.",
     `BSB Health Skills Academy was started by M.R. Balachandran, who spent 37 years in the Madras Medical College laboratory and ${site.experience} in laboratory service overall. Classes are in Tamil, in small batches, and every student handles real equipment from day one.`,
@@ -1329,12 +1329,12 @@ export const academy = {
 export const poctPage = {
   faqTitle: "POCT course — frequently asked questions",
   ctaTitle: "Apply for POCT Practical Training",
-  ctaTa: "உங்கள் எதிர்காலத்தை உருவாக்குங்கள்!",
+  ctaTa: "",
   ctaText: "Message us on WhatsApp to reserve your seat in the next batch.",
   schemaDescription:
     "Hands-on Point-of-Care Testing course in Chennai covering body weight, BMI, temperature, SpO₂, blood sugar, haemoglobin and urine testing, taught in Tamil.",
   h1: "Point-of-Care Testing Practical Training in Chennai",
-  ta: "பாயின்ட்-ஆஃப்-கேர் டெஸ்டிங் செய்முறைப் பயிற்சி",
+  ta: "",
   overview: [
     "Point-of-Care Testing (POCT) means doing quick, simple health tests at the place where the patient is — a clinic, a health camp, a pharmacy or a home — and getting a result in minutes. It is the most practical skill a +2 student can learn to enter healthcare.",
     "This course teaches seven essential POCT skills in Tamil, with real equipment and plenty of practice. It is led by M.R. Balachandran, who has " + site.experience + " in medical laboratory service.",
@@ -1379,13 +1379,13 @@ export const poctPage = {
 export const haPage = {
   faqTitle: "Health Assistant course — frequently asked questions",
   ctaTitle: "Join the Health Assistant for Diabetics course",
-  ctaTa: "உங்கள் எதிர்காலத்தை உருவாக்குங்கள்!",
+  ctaTa: "",
   ctaText: "One month. Hands-on. In Tamil. Message us to reserve your seat.",
   syllabusIntro: "Seven practical units, taught hands-on in Tamil.",
   schemaDescription:
     "One-month Health Assistant for Diabetics course in Tamil Nadu: glucometer use, blood pressure, diabetic foot check, hypoglycaemia escalation, diet basics and record keeping. Direct or distance mode.",
   h1: "Health Assistant for Diabetics – 1-Month Course",
-  ta: "+1 / +2 தேறிய மாணவர்களுக்கு மருத்துவ துறையில் வேலை வாய்ப்பு",
+  ta: "",
   overview: [
     "Diabetes care happens mostly at home, and families struggle to find someone trained to help. The Health Assistant for Diabetics course is a one-month programme that prepares you to support diabetic patients safely — by monitoring, recording, guiding and escalating to the doctor when needed.",
     "It suits +1 / +2 students looking for a start in the medical field, and also family members who want to care better for a diabetic parent or spouse.",
@@ -1434,7 +1434,7 @@ export const haPage = {
 export const admissions = {
   // Bank loan wording appears only when bankLoan.enabled = true (lender confirmed).
   h1: bankLoan.enabled ? "Admissions, Fees & Bank Loan Assistance" : "Admissions & Fees",
-  ta: bankLoan.enabled ? "சேர்க்கை, கட்டணம் & வங்கிக் கடன் உதவி" : "சேர்க்கை & கட்டணம்",
+  ta: "",
   intro:
     "Joining is simple: message us on WhatsApp, share your documents and confirm your seat. Here is everything you need to know about eligibility, fees and payment.",
   eligibility: {
@@ -1482,7 +1482,7 @@ export const admissions = {
   ctaText: "Call or WhatsApp — we’re happy to explain everything in Tamil.",
   form: {
     title: "Apply now",
-    ta: "இப்போதே விண்ணப்பிக்கவும்",
+    ta: "",
     text: "Fill in four details — your message opens in WhatsApp and we reply with the next steps.",
   },
 };
@@ -1561,32 +1561,32 @@ export const homeSections = {
   learnIntro: "Seven essential point-of-care tests, practised hands-on with real equipment.",
   homeCareIntro: "Trusted health services at your doorstep across Chennai.",
   learnTitle: "What you will learn",
-  learnTa: "என்ன கற்றுக்கொள்வீர்கள்",
+  learnTa: "",
   coursesTitle: "Our courses",
-  coursesTa: "எங்கள் படிப்புகள்",
+  coursesTa: "",
   homeCareTitle: "Home health care services",
-  homeCareTa: "வீட்டிலேயே சுகாதார சேவைகள்",
+  homeCareTa: "",
   diabetesBand: {
     title: "The Complete Diabetic Care",
-    ta: "முழுமையான நீரிழிவு பராமரிப்பு",
+    ta: "",
     text: "Seven pillars of care — from education to emotional support — brought to your home in Chennai.",
     cta: "Explore Complete Diabetic Care",
   },
   legacy: {
     title: "A legacy of service",
-    ta: "சேவையின் பாரம்பரியம்",
+    ta: "",
     text: "From the laboratories of Madras Medical College to community health camps, a career built on careful work and care for people.",
     cta: "See the full story & legacy",
   },
   galleryTitle: "Gallery",
-  galleryTa: "புகைப்படங்கள்",
+  galleryTa: "",
   galleryIntro: "Training sessions, health camps and moments from the lab.",
   testimonialsTitle: "Student & patient stories",
-  testimonialsTa: "மாணவர் & நோயாளர் அனுபவங்கள்",
+  testimonialsTa: "",
   faqTitle: "Frequently asked questions",
-  faqTa: "அடிக்கடி கேட்கப்படும் கேள்விகள்",
+  faqTa: "",
   finalCta: {
-    ta: "உங்கள் எதிர்காலத்தை உருவாக்குங்கள்!",
+    ta: "",
     en: "Build your future!",
     text: "Call or WhatsApp us today to join the next batch or book a home health care visit.",
   },
@@ -1597,7 +1597,7 @@ export const homeSections = {
  * ------------------------------------------------------------------------- */
 export const contact = {
   h1: "Contact BSB Health Care – Chennai",
-  ta: "எங்களைத் தொடர்பு கொள்ளுங்கள்",
+  ta: "",
   intro: "Call, WhatsApp or visit us. We reply to every message — usually within a few hours during working hours.",
   directionsTitle: "Directions",
   directions:
@@ -1828,7 +1828,7 @@ export const ui = {
   course: "Course",
   qualification: "Qualification",
   qualificationHint: "e.g. +2 passed",
-  noFormTa: "படிவம் வேண்டாமா? நேரடியாக WhatsApp செய்யலாம்.",
+  noFormTa: "Prefer not to fill in the form? You can message us directly.",
   messageDirectly: "Message us directly",
   formLabels: {
     select: "Select…",

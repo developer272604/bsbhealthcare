@@ -50,7 +50,7 @@ export function ServiceView({ lang, slug }: { lang: Lang; slug: string }) {
               {ui.notEmergency}
             </h2>
             <p className="mt-1 text-sm text-muted">{disclaimers.emergency}</p>
-            {lang === "en" && (
+            {lang === "en" && disclaimers.emergencyTa && (
               <Ta as="p" className="mt-1 text-sm text-muted">
                 {disclaimers.emergencyTa}
               </Ta>

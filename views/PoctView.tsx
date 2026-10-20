@@ -69,7 +69,7 @@ export function PoctView({ lang }: { lang: Lang }) {
                   <div className="flex-1">
                     <Ta as="p" className="text-sm font-bold text-brand-red">
                       {ui.module} {i + 1}
-                      {lang === "en" ? ` · ${s.ta}` : ""}
+                      {lang === "en" && s.ta ? ` · ${s.ta}` : ""}
                     </Ta>
                     <h3 className="text-lg font-bold text-navy">{lang === "en" ? s.en : s.ta}</h3>
                     <dl className="mt-3 grid gap-3 text-sm md:grid-cols-3 md:text-base">
