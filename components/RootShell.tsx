@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { ScrollEffects } from "@/components/ScrollEffects";
-import { FloatingWhatsApp, MobileStickyBar } from "@/components/StickyActions";
+import { FloatingWhatsApp } from "@/components/StickyActions";
 import { site } from "@/lib/content";
 import { getContent, htmlLang, type Lang } from "@/lib/i18n";
 import { sitewideSchema } from "@/lib/schema";
@@ -37,7 +37,6 @@ export function RootShell({
         <main id="main">{children}</main>
         <Footer lang={lang} />
         <FloatingWhatsApp lang={lang} />
-        <MobileStickyBar lang={lang} />
         <JsonLd data={sitewideSchema(lang)} />
         <Analytics gaId={site.ga4Id} />
         {deferredFontClass && <DeferredFonts classNames={deferredFontClass} />}

@@ -55,7 +55,7 @@ export function AcademyView({ lang }: { lang: Lang }) {
 
       <Section>
         <SectionHeading title={academy.methodTitle} />
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {academy.method.map((m) => (
             <li key={m.title}>
               <IconCard icon={m.icon} title={m.title} text={m.text} />

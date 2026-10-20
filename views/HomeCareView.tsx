@@ -28,7 +28,7 @@ export function HomeCareView({ lang }: { lang: Lang }) {
 
       <Section bg="mint" id="areas">
         <SectionHeading title={ui.areasWeServe} />
-        <CheckList items={areasServed} className="grid gap-x-8 gap-y-2 sm:grid-cols-2 lg:grid-cols-3" />
+        <CheckList items={areasServed} className="grid grid-cols-2 gap-x-4 gap-y-2 lg:grid-cols-3" />
         <p className="mt-4 text-sm">
           <Txt>{areasConfirm}</Txt>
         </p>
@@ -37,7 +37,7 @@ export function HomeCareView({ lang }: { lang: Lang }) {
 
       <Section id="how-booking-works">
         <SectionHeading title={o.howTitle} />
-        <ol className="grid gap-4 md:grid-cols-4">
+        <ol className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
           {o.how.map((s, i) => (
             <li key={s.title}>
               <Card className="h-full">

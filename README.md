@@ -105,7 +105,7 @@ Real files in place: `logo.png`, `logo-square.png`, `founder-portrait.jpg`, the 
 * Navy `#0B2A6F` / gold `#F2B705` / red CTA / green trust, matching the supplied logo (white + gold, so the header is navy). The “Complete Diabetic Care” band is flat navy with gold accents.
 * **Scroll animation on every page:** content fades and rises as it scrolls into view (staggered in grids), a gold scroll-progress bar sits under the header, the header gains a shadow, and the founder’s experience numbers count up. Uses only `opacity`/`transform` with one IntersectionObserver; skipped for `prefers-reduced-motion`; content is fully visible without JavaScript.
 * **About page:** a highlighted gold band right below the intro shows **50 years · 37 years at MMC · 21 directors**, and the “50 years” phrase is highlighted in the intro.
-* Click-to-call and WhatsApp on every screen: sticky header Call button, floating WhatsApp (tablet/desktop), sticky mobile bar **[Call] [WhatsApp] [Apply]**, per-context pre-filled messages, WhatsApp-only forms (Apply form has 4 fields), GA4 events `click_call`, `click_whatsapp`, `click_apply`.
+* Click-to-call and WhatsApp on every screen: sticky header Call button, floating WhatsApp button on every screen size (the mobile bottom bar was removed), per-context pre-filled messages, WhatsApp-only forms (Apply form has 4 fields), GA4 events `click_call`, `click_whatsapp`, `click_apply`.
 
 ## 7. Deploy
 

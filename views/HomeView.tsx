@@ -29,12 +29,12 @@ export function HomeView({ lang }: { lang: Lang }) {
       <TrustStrip lang={lang} />
       <QuickAnswer label={c.ui.inShort} text={entry.answer ?? entry.description} />
       <SkillsGrid lang={lang} />
-      <CourseCards lang={lang} />
       <WhyTraining lang={lang} />
-      <AdmissionSteps lang={lang} />
+      <CourseCards lang={lang} />
       <FounderPreview lang={lang} />
       <HomeCareCards lang={lang} />
-      <DiabetesBand lang={lang} />
+      <AdmissionSteps lang={lang} />
+      {/* <DiabetesBand lang={lang} /> */}
       <LegacyPreview lang={lang} />
       <Section id="gallery">
         <SectionHeading title={c.homeSections.galleryTitle} ta={c.homeSections.galleryTa} intro={c.homeSections.galleryIntro} />

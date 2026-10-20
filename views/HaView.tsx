@@ -66,7 +66,7 @@ export function HaView({ lang }: { lang: Lang }) {
 
       <Section bg="mint" id="syllabus">
         <SectionHeading title={p.syllabusTitle} intro={p.syllabusIntro} />
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
           {p.syllabus.map((s, i) => (
             <li key={s.title}>
               <Card className="h-full">

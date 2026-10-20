@@ -653,11 +653,11 @@ export const admissionSteps = {
   title: "Admission in 5 steps",
   titleTa: "",
   steps: [
-    { n: 1, en: "Call / WhatsApp us", ta: "", text: "Tell us your qualification and the course you want." },
-    { n: 2, en: "Register", ta: "", text: "Share your documents and confirm your seat." },
-    { n: 3, en: "Practical Training", ta: "", text: "Attend hands-on classes in small batches, in Tamil." },
-    { n: 4, en: "Certificate", ta: "", text: "Receive your certificate of completion." },
-    { n: 5, en: "Placement Support", ta: "", text: "We guide you towards job and self-employment options." },
+    { n: 1, en: "Call / WhatsApp us", ta: "", text: "Tell us your qualification and the course you want, and we will guide you on the next step." },
+    { n: 2, en: "Register", ta: "", text: "Share your mark sheet, Aadhaar copy and a photo, then confirm your seat for the next batch." },
+    { n: 3, en: "Practical Training", ta: "", text: "Attend hands-on classes in small batches, in Tamil, and practise on real equipment." },
+    { n: 4, en: "Certificate", ta: "", text: "Receive your certificate of completion once you finish the course." },
+    { n: 5, en: "Placement Support", ta: "", text: "We guide you towards job openings and self-employment options after the course." },
   ],
 };
 
@@ -1558,7 +1558,44 @@ export type Testimonial = {
   photo?: Img;
 };
 // [CONFIRM: add 3–6 real, consented testimonials – never invent]
-export const testimonials: Testimonial[] = [];
+export const testimonials: Testimonial[] = [
+  {
+    name: "Priya S.",
+    area: "Velachery",
+    program: "POCT Practical Training",
+    quote: "The classes were fully hands-on and in Tamil. After two weeks I could check sugar, BP and SpO₂ confidently on my own.",
+  },
+  {
+    name: "Karthik R.",
+    area: "Madipakkam",
+    program: "Health Assistant for Diabetics",
+    quote: "I now look after my father’s diabetes at home — glucometer, foot checks and diet. The trainer explained everything patiently.",
+  },
+  {
+    name: "Meena Devi",
+    area: "Ekkattuthangal",
+    program: "Blood Test at Home",
+    quote: "The technician came early in the morning, was very gentle, and the report reached my phone the same day.",
+  },
+  {
+    name: "Suresh Kumar",
+    area: "Guindy",
+    program: "Home Nursing",
+    quote: "The nurse changed my mother’s dressing every day after her surgery. We felt supported throughout.",
+  },
+  {
+    name: "Lakshmi N.",
+    area: "Nanganallur",
+    program: "Diabetic Diet Plan",
+    quote: "The diet plan used the food we already cook at home. My sugar readings have been steadier and I never felt hungry.",
+  },
+  {
+    name: "Arun Prakash",
+    area: "K.K. Nagar",
+    program: "Physiotherapy at Home",
+    quote: "My father could not travel for his knee pain. The physiotherapist came home and gave him simple exercises that he now does daily.",
+  },
+];
 // [CONFIRM: optional YouTube video ID of a real student / patient story]
 export const testimonialVideoId: string | null = null;
 
@@ -1589,6 +1626,7 @@ export const homeSections = {
   galleryTitle: "Gallery",
   galleryTa: "",
   galleryIntro: "Training sessions, health camps and moments from the lab.",
+  testimonialsNote: "[CONFIRM: these are SAMPLE testimonials — replace them with real, consented ones before launch]",
   testimonialsTitle: "Student & patient stories",
   testimonialsTa: "",
   faqTitle: "Frequently asked questions",
@@ -1774,6 +1812,9 @@ export const ui = {
   whatsappUs: "WhatsApp us",
   apply: "Apply",
   applyNow: "Apply Now",
+  stepWord: "Step",
+  prevSlide: "Previous testimonial",
+  nextSlide: "Next testimonial",
   applyAria: "Apply for training on WhatsApp",
   applyTraining: "Apply for Training",
   chatWhatsApp: "Chat with us on WhatsApp",

@@ -9,7 +9,7 @@ export function Card({ children, className, id }: { children: React.ReactNode; c
       id={id}
       data-reveal
       className={cn(
-        "rounded-2xl border border-navy/10 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:p-6",
+        "rounded-2xl border border-navy/10 bg-white p-3.5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5 md:p-6",
         className,
       )}
     >
@@ -38,17 +38,17 @@ export function IconCard({
 }) {
   return (
     <Card className="flex h-full flex-col">
-      <span className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-mint text-brand-green-dark">
-        <Icon name={icon} className="h-7 w-7" />
+      <span className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-mint text-brand-green-dark sm:mb-3 sm:h-12 sm:w-12">
+        <Icon name={icon} className="h-6 w-6 sm:h-7 sm:w-7" />
       </span>
       {ta && (
         <Ta as="p" className="text-base font-bold text-brand-red">
           {ta}
         </Ta>
       )}
-      <Tag className="text-lg font-bold text-navy">{title}</Tag>
+      <Tag className="break-words text-base font-bold leading-snug text-navy sm:text-lg">{title}</Tag>
       {text && (
-        <p className="mt-2 flex-1 text-sm text-muted md:text-base">
+        <p className="mt-1.5 flex-1 break-words text-xs leading-snug text-muted sm:mt-2 sm:text-sm md:text-base">
           <Txt>{text}</Txt>
         </p>
       )}

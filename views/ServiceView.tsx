@@ -52,7 +52,7 @@ export function ServiceView({ lang, slug }: { lang: Lang; slug: string }) {
 
       <Section id="how-it-works">
         <SectionHeading title={ui.howItWorks} />
-        <ol className="grid gap-4 md:grid-cols-4">
+        <ol className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
           {s.steps.map((st, i) => (
             <li key={st.title}>
               <Card className="h-full">

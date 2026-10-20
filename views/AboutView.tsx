@@ -158,7 +158,7 @@ export function AboutView({ lang }: { lang: Lang }) {
 
       <Section bg="mint" id="associations">
         <SectionHeading title={l.associationsTitle} intro={l.associationsNote} as="h3" />
-        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
           {l.associations.map((a) => (
             <li key={a.name}>
               <Card className="h-full overflow-hidden !p-0">
